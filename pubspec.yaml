@@ -1,0 +1,64 @@
+name: vizier
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #Localizations 
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  #Bloc
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+  #Code generation
+  freezed_annotation: ^1.1.0
+  json_annotation: ^4.4.0
+  #Dependency Injection
+  injectable: ^1.5.3
+  get_it: ^7.2.0
+  #Storages
+  flutter_secure_storage: ^5.0.2
+  shared_preferences: ^2.0.11
+  #Routing
+  auto_route: ^3.2.4
+  #Tools
+  cupertino_icons: ^1.0.2
+  lint: ^1.8.2
+  #UI
+  flutter_svg: ^1.0.3
+
+dev_dependencies:
+  auto_route_generator: ^3.2.3
+  build_runner: ^2.1.8
+  flutter_lints: ^1.0.0
+  freezed: ^1.1.1
+  injectable_generator: ^1.5.3
+  json_serializable: ^6.1.5
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/svgs/
+    - assets/mocks/finances/
+    - assets/mocks/user/
+    - assets/mocks/portfolio/
+    - assets/mocks/transactions/
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/ubuntu/Ubuntu-Light.ttf
+          weight: 300
+        - asset: assets/fonts/ubuntu/Ubuntu-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/ubuntu/Ubuntu-Medium.ttf          
+          weight: 500
+        - asset: assets/fonts/ubuntu/Ubuntu-Bold.ttf
+          weight: 700
+

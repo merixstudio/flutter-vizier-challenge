@@ -1,0 +1,266 @@
+{
+  "ok": "OK",
+  "@ok": {},
+
+  "validationRuleNotBlank": "Must be not blank",
+  "@validationRuleNotBlank": {},
+  "validationRuleIsValidEmail": "Invalid email address format",
+  "@validationRuleIsValidEmail": {},
+  "validationRuleIsValidCardCvv": "Invalid card cvv format",
+  "@validationRuleIsValidCardCvv": {},
+  "validationRuleIsValidDateFormat": "Invalid date format",
+  "@validationRuleIsValidDateFormat": {},
+  "validationRuleIsValidCardExpiry": "Card has been expired",
+  "@validationRuleIsValidCardExpiry": {},
+  "validationRuleIsValidCardNumber": "Invalid card number format",
+  "@validationRuleIsValidCardNumber" : {},
+
+  "chartTabWeek": "1W",
+  "@chartTabWeek": {},
+  "chartTabMonth": "1M",
+  "@chartTabMonth": {},
+  "chartTabYear": "1Y",
+  "@chartTabYear": {},
+  "chartTabAll": "All",
+  "@chartTabAll": {},
+
+  "appErrorMockTitle": "Mock Error",
+  "@appErrorMockTitle": {},
+  "appErrorMockMessage": "Something is wrong with mock JSONs",
+  "@appErrorMockMessage": {},
+  "appErrorNetworkTitle": "Network Error",
+  "@appErrorNetworkTitle": {},
+  "appErrorNetworkMessage": "Check your network connection",
+  "@appErrorNetworkMessage": {},
+  "appErrorServerTitle": "Server Error",
+  "@appErrorServerTitle": {},
+  "appErrorServerMessage": "Status code: {statusCode}\nJson: {json}",
+  "@appErrorServerMessage": {
+      "placeholders": {
+          "statusCode": {
+            "type": "String"
+          },
+          "json": {
+              "type": "String"
+            }
+      }
+  },
+  "financialBreakdownPageTitle": "Financial breakdown",
+  "@financialBreakdownPageTitle": {
+    "description": "Financial breakdown page title"
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Onboarding screen skipping intro"
+  },
+  "appErrorUnknownTitle": "Unknown Error",
+  "@appErrorUnknownTitle": {},
+  "appErrorUnknownMessage": "Something unexpected happened",
+  "@appErrorUnknownMessage": {},
+
+  "contentUnavailableAlertTitle": "Unavailable",
+  "@contentUnavailableAlertTitle": {},
+  "contentUnavailableAlertContent": "Selected functionality is not yet available.",
+  "@contentUnavailableAlertContent": {},
+
+  "inputEmailLabel": "Email",
+  "@inputEmailLabel": {},
+  "inputPasswordLabel": "Password",
+  "@inputPasswordLabel": {},
+
+  "onboardingTrackMoneyTitle": "Track & manage your money",
+  "@onboardingTrackMoneyTitle": {},
+  "onboardingTrackMoneyDescription": "Quickly and easily find information about all your finances.",
+  "@onboardingTrackMoneyDescription": {},
+  "onboardingStayFocusedTitle": "Stay focused on your financial goals",
+  "@onboardingStayFocusedTitle": {},
+  "onboardingStayFocusedDescription": "Easier to achieve what to have planned.",
+  "@onboardingStayFocusedDescription": {},
+  "onboardingAllMoneyTitle": "All your money in one app",
+  "@onboardingAllMoneyTitle": {},
+  "onboardingAllMoneyDescription": "Manage all your finances easier when they are always in one place.",
+  "@onboardingAllMoneyDescription": {},
+  "oboardingSkipButton": "Skip",
+  "@oboardingSkipButton": {},
+  "oboardingBeginButton": "Begin",
+  "@oboardingBeginButton": {},
+  
+  "logInPageHeaderTitle": "Welcome back",
+  "@logInPageHeaderTitle": {},
+  "logInPageHeaderSubtitle": "Log in to continue",
+  "@logInPageHeaderSubtitle": {},
+  "logInPageLogInButton": "Log in",
+  "@logInPageLogInButton": {},
+  "logInPageFooterTitle": "Don't have an account?",
+  "@logInPageFooterTitle": {},
+  "logInPageSignUpButton": "Sign up",
+  "@logInPageSignUpButton": {},
+
+  "bottomBarItemHomeTitle": "Home",
+  "@bottomBarItemHomeTitle": {},
+  "bottomBarItemFinancesTitle": "Finances",
+  "@bottomBarItemFinancesTitle": {},
+  "bottomBarItemPortfolioTitle": "Portfolio",
+  "@bottomBarItemPortfolioeTitle": {},
+  "bottomBarItemOffersTitle": "Offers",
+  "@bottomBarItemOfferseTitle": {},
+
+  "homeTabItemWalletTitle": "My Wallet",
+  "@homeTabItemWalletTitle": {},
+  "homeTabItemFutureTitle": "My Future",
+  "@homeTabItemFutureTitle": {},
+  "homeTabItemAddTitle": "+Add",
+  "@homeTabItemAddTitle": {},
+
+  "homeMyWalletAssetPerformanceTitle": "Assets performance",
+  "@homeMyWalletAssetPerformanceTitle": {},
+  "homeMyWalletSummaryBalanceInfo": "My wallet balance",
+  "@homeMyWalletSummaryBalanceInfo": {},
+  "homeMyWalletSummaryConnectAccountButton": "Connect cash account",
+  "@homeMyWalletSummaryConnectAccountButton": {},
+  "homeMyWalletSummaryGoalsSectionTitle": "My goals",
+  "@homeMyWalletSummaryGoalsSectionTitle": {},
+  "homeMyWalletSummaryGoalCellProgressDescription": "{percentage} goal",
+  "@homeMyWalletSummaryGoalCellProgressDescription": {
+    "placeholders": {
+      "percentage": {
+        "type": "String"
+      }
+    }
+  },
+  "homeMyWalletFooterTitle": "Retirement\ngoals and\noffers",
+  "@homeMyWalletFooterTitle": {},
+
+  "homeMyFutureAssetPerformanceTitle": "Assets performance",
+  "@homeMyFutureAssetPerformanceTitle": {},
+  "homeMyFutureChartTitle": "My retirement plan",
+  "@homeMyFutureChartTitle": {},
+
+  "homeAddAccountsSectionTitle": "Accounts",
+  "@homeAddAccountsSectionTitle": {},
+  "homeAddOtherServicesSectionTitle": "Other services",
+  "@homeAddOtherServicesSectionTitle": {},
+  "homeAddOtherServicesVaultCellTitle": "Vault",
+  "@homeAddOtherServicesVaultCellTitle": {},
+  "homeAddOtherServicesCommoditiesCellTitle": "Commodities",
+  "@homeAddOtherServicesCommoditiesCellTitle": {},
+  "homeAddOtherServicesCreditCellTitle": "Credit",
+  "@homeAddOtherServicesCreditCellTitle": {},
+  "homeAddOtherServicesInsuranceCellTitle": "Insurance",
+  "@homeAddOtherServicesInsuranceCellTitle": {},
+
+  "financesPageTitle": "My finances",
+  "@financesPageTitle": {},
+  "financesStatusSummaryTitle": "You spent",
+  "@financesStatusSummaryTitle": {},
+  "financesStatusSummarySince": "Since {date}st",
+  "@financesStatusSummarySince":  {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "financesHistoryChartHeaderTitle": "Financial overview",
+  "@financesHistoryChartHeaderTitle": {},
+  "financesHeaderDescription": "Current cash balance",
+  "@financesHeaderDescription": {},
+  "financesHistoryChartBalances": "Balances",
+  "@financesHistoryChartBalances": {},
+  "financesHistoryChartExpenses": "Expenses",
+  "@financesHistoryChartExpenses": {},
+  "financesHistoryChartBottomSheetCardsOverviewButton": "Cards overview",
+  "@financesHistoryChartBottomSheetCardsOverviewButton": {},
+  "financesHistoryChartBottomSheetFinancialBreakDownButton": "Financial break down",
+  "@financesHistoryChartBottomSheetFinancialBreakDownButton": {},
+
+  "portfolioPageTitle": "My portfolio",
+  "@portfolioPageTitle": {},
+  "portfolioPageAssetPerformanceContent": "Total assets balance",
+  "@portfolioPageAssetPerformanceContent": {},
+  "portfolioDigitalCurrenciesBannerTitle": "Digital currencies",
+  "@portfolioDigitalCurrenciesBannerTitle": {},
+  "portfolioMyWatchlistSectionTitle": "My watchlist",
+  "@portfolioMyWatchlistSectionTitle": {},
+
+  "profilePageTitle": "My profile",
+  "@profilePageTitle": {},
+  "profilePageLogoutButton": "Log out",
+  "@profilePageLogoutButton": {},
+  "profilePageMyAccountButton": "My Account",
+  "@profilePageMyAccountButton": {},
+  "profilePageNotificationstButton": "Notifications",
+  "@profilePageNotificationstButton": {},
+  "profilePageAboutUsButton": "About us",
+  "@profilePageAboutUsButton": {},
+  "profilePageTermsButton": "Terms and conditions",
+  "@profilePageTermsButton": {},
+  
+  "offersPageTitle": "Offers",
+  "@offersPageTitle": {},
+  "offerDetailsPageSliderMonths": "{value} months",
+  "@offerDetailsPageSliderMonths": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "offerDetailsPageSliderYears": "{value} years",
+  "@offerDetailsPageSliderYears": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "offerCellTitle": "#{index} Offer",
+  "@offerCellTitle": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "offerTypeRetirementGoalsLeftContent": "Retirement goal",
+  "@offerTypeRetirementGoalsLeftContent": {},
+  "offerTypeMortgagesLeftContent": "Loan amount",
+  "@offerTypeMortgagesLeftContent": {},
+  "offerTypeLoansLeftContent": "Loan amount",
+  "@offerTypeLoansLeftContent": {},
+  "offerTypeRightContent": "Estimated pr. month:",
+  "@offerTypeRightContent": {},
+
+  "creditCardValidThru": "valid thru",
+  "@creditCardValidThru": {},
+  "creditCardBalance": "Card balance",
+  "@creditCardBalance": {},
+  "creditCardFormInputLabelBilling": "Billing address",
+  "@creditCardFormInputLabelBilling": {},
+  "creditCardFormInputLabelCvv": "CVV code",
+  "@creditCardFormInputLabelCvv": {},
+  "creditCardFormInputLabelExpiry": "Expiry date",
+  "@creditCardFormInputLabelExpiry": {},
+  "creditCardFormInputLabelName": "Name on card",
+  "@creditCardFormInputLabelName": {},
+  "creditCardFormInputLabelNumber": "Number",
+  "@creditCardFormInputLabelNumber": {},
+  "creditCardFormInputLabelScan": "Scan",
+  "@creditCardFormInputLabelScan": {},
+  "creditCardFormTitle": "Connect cash account",
+  "@creditCardFormTitle": {},
+  "creditCardFormAdd": "Add",
+  "@creditCardFormAdd": {},
+  
+  "creditCardOverviewTitle": "Cards",
+  "@creditCardOverviewTitle": {},
+  "creditCardTransactionsSectionTitle": "Transactions",
+  "@creditCardTransactionsSectionTitle": {},
+
+  "portfolioCurrenciesSellButton": "Sell",
+  "@portfolioCurrenciesSellButton": {},
+  "portfolioCurrenciesBuyButton": "Buy shares",
+  "@portfolioCurrenciesBuyButton": {},
+  "portfolioCurrenciesDetailsHeader": "Details",
+  "@portfolioCurrenciesDetailsHeader": {}
+}
