@@ -25,12 +25,17 @@ class AdaptiveAlertDialogAction extends StatelessWidget {
         return _buildCupertinoDialogAction();
       case AdaptiveWidgetType.material:
       default:
-        return _buildMaterialDialogAction();
+        return _buildMaterialDialogAction(context);
     }
   }
 
-  Widget _buildMaterialDialogAction() {
+  Widget _buildMaterialDialogAction(BuildContext context) {
     return TextButton(
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(
+          AppColors.gray500,
+        ),
+      ),
       onPressed: onPressed,
       child: Text(
         title,
