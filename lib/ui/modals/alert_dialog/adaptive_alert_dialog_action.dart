@@ -31,12 +31,12 @@ class AdaptiveAlertDialogAction extends StatelessWidget {
 
   Widget _buildMaterialDialogAction() {
     return TextButton(
+      onPressed: onPressed,
       style: ButtonStyle(
         overlayColor: MaterialStateProperty.all(
           AppColors.gray500,
         ),
       ),
-      onPressed: onPressed,
       child: Text(
         title,
         style: textStyle ?? _defaultActionTextStyle(),
