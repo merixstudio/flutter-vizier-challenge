@@ -29,7 +29,6 @@ dependencies:
   auto_route: ^3.2.4
   #Tools
   cupertino_icons: ^1.0.2
-  lint: ^1.8.2
   #UI
   flutter_svg: ^1.0.3
 
@@ -40,6 +39,7 @@ dev_dependencies:
   freezed: ^1.1.1
   injectable_generator: ^1.5.3
   json_serializable: ^6.1.5
+  lint: ^1.8.2
 
 flutter:
   uses-material-design: true

@@ -142,6 +142,7 @@ class _CreditCardFormPageState extends State<CreditCardFormPage> {
           context.read<CardAddCubit>().add(context.read<CardFormCubit>().state.account);
         }
       },
+      padding: EdgeInsets.all(AppDimensions.padding.defaultValue),
       child: Text(
         AppLoc.of(context).creditCardFormAdd,
         style: AppTextStyles.button.primary(),
