@@ -65,12 +65,6 @@ class _AdaptiveTextFieldState extends State<AdaptiveTextField> {
     controller.addListener(textEditingControllerListener);
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    controller.removeListener(textEditingControllerListener);
-  }
-
   void focusNodeListener() {
     setState(() {
       if (!hasFocus) {
@@ -130,5 +124,13 @@ class _AdaptiveTextFieldState extends State<AdaptiveTextField> {
         color: AppColors.black,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    controller
+      ..removeListener(textEditingControllerListener)
+      ..dispose();
+    super.dispose();
   }
 }

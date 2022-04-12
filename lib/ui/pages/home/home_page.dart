@@ -38,8 +38,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
             HomeAppBar(
               userModel: context.watch<UserCubit>().state.user,
-              onAlertsPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
-              onProfilePressed: () => context.router.pushNamed(ProfilePage.route),
+              onAlertsPressed: () =>
+                  AdaptiveAlertDialogFactory.showContentUnavailable(context),
+              onProfilePressed: () =>
+                  context.router.pushNamed(ProfilePage.route),
             ),
           ],
           body: _buildBody(),
@@ -79,7 +81,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           child: Flexible(
             child: PageView.builder(
               controller: pageController,
-              itemBuilder: (context, index) => HomeTabItem.values[index].content(context),
+              itemBuilder: (context, index) =>
+                  HomeTabItem.values[index].content(context),
               itemCount: HomeTabItem.values.length,
               onPageChanged: (index) => setState(() {
                 tabController.index = index;
@@ -89,5 +92,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ),
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    pageController.dispose();
+    super.dispose();
   }
 }

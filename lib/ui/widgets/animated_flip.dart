@@ -19,7 +19,8 @@ class AnimatedFlip extends StatefulWidget {
   State<AnimatedFlip> createState() => _AnimatedFlipState();
 }
 
-class _AnimatedFlipState extends State<AnimatedFlip> with TickerProviderStateMixin {
+class _AnimatedFlipState extends State<AnimatedFlip>
+    with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: AppConstants.animation.defaultDuration * 3,
     vsync: this,
@@ -69,12 +70,6 @@ class _AnimatedFlipState extends State<AnimatedFlip> with TickerProviderStateMix
   }
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _rotate,
@@ -92,5 +87,11 @@ class _AnimatedFlipState extends State<AnimatedFlip> with TickerProviderStateMix
               ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }

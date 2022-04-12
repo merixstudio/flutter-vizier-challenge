@@ -20,7 +20,8 @@ import 'package:vizier/utils/currency_formatter_util.dart';
 part 'widgets/credit_card_list.dart';
 part 'widgets/credit_card_transactions_list.dart';
 
-class CreditCardOverviewPage extends StatefulWidget implements AutoRouteWrapper {
+class CreditCardOverviewPage extends StatefulWidget
+    implements AutoRouteWrapper {
   static const String route = 'card-overview-page';
 
   const CreditCardOverviewPage({
@@ -48,7 +49,8 @@ class _CreditCardOverviewPageState extends State<CreditCardOverviewPage> {
   @override
   void initState() {
     super.initState();
-    final List<AccountModel>? accounts = context.read<WalletCubit>().state.wallet?.accounts;
+    final List<AccountModel>? accounts =
+        context.read<WalletCubit>().state.wallet?.accounts;
     if (accounts?.isNotEmpty ?? false) {
       context.read<TransactionHistoryCubit>().fetchData(
             accountModel: accounts!.first,
@@ -73,7 +75,8 @@ class _CreditCardOverviewPageState extends State<CreditCardOverviewPage> {
             aspectRatio: 2.0,
             child: BlocBuilder<WalletCubit, WalletState>(
               builder: (_, state) {
-                final List<AccountModel> accounts = state.wallet?.accounts ?? [];
+                final List<AccountModel> accounts =
+                    state.wallet?.accounts ?? [];
                 return _CreditCardList(
                   accounts: accounts,
                   controller: _pageController,
@@ -97,7 +100,8 @@ class _CreditCardOverviewPageState extends State<CreditCardOverviewPage> {
                 Padding(
                   padding: AppDimensions.padding.defaultHorizontal(),
                   child: SectionHeader(
-                    title: AppLoc.of(context).creditCardTransactionsSectionTitle,
+                    title:
+                        AppLoc.of(context).creditCardTransactionsSectionTitle,
                   ),
                 ),
                 SizedBox(
@@ -105,7 +109,11 @@ class _CreditCardOverviewPageState extends State<CreditCardOverviewPage> {
                 ),
                 Expanded(
                   child: _CreditCardTransactionsList(
-                    transactions: context.watch<TransactionHistoryCubit>().state.transactions ?? [],
+                    transactions: context
+                            .watch<TransactionHistoryCubit>()
+                            .state
+                            .transactions ??
+                        [],
                   ),
                 ),
               ],
@@ -114,5 +122,11 @@ class _CreditCardOverviewPageState extends State<CreditCardOverviewPage> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 }

@@ -47,7 +47,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
             actions: [
               AnimatedSwitcher(
                 duration: AppConstants.animation.defaultDuration,
-                child: state.isLastPage ? const SizedBox.shrink() : _buildSkipButton(),
+                child: state.isLastPage
+                    ? const SizedBox.shrink()
+                    : _buildSkipButton(),
               ),
             ],
           ),
@@ -64,7 +66,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   Widget _buildSkipButton() {
     return AdaptiveButton(
-      onPressed: () => context.router.replaceNamed(AuthenticationLoginPage.route),
+      onPressed: () =>
+          context.router.replaceNamed(AuthenticationLoginPage.route),
       child: Text(
         AppLoc.of(context).oboardingSkipButton,
         style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -163,11 +166,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
   Widget _buildBeginButton() {
     return AdaptiveButton(
       decoration: AppDecorations.button.primary(),
-      onPressed: () => context.router.replaceNamed(AuthenticationLoginPage.route),
+      onPressed: () =>
+          context.router.replaceNamed(AuthenticationLoginPage.route),
       child: Text(
         AppLoc.of(context).oboardingBeginButton,
         style: AppTextStyles.button.primary(),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }

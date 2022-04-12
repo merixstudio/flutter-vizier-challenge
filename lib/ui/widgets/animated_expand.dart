@@ -16,7 +16,8 @@ class AnimatedExpand extends StatefulWidget {
   _AnimatedExpandState createState() => _AnimatedExpandState();
 }
 
-class _AnimatedExpandState extends State<AnimatedExpand> with SingleTickerProviderStateMixin {
+class _AnimatedExpandState extends State<AnimatedExpand>
+    with SingleTickerProviderStateMixin {
   late final AnimationController expandController;
   late final Animation<double> animation;
 
@@ -61,17 +62,17 @@ class _AnimatedExpandState extends State<AnimatedExpand> with SingleTickerProvid
   }
 
   @override
-  void dispose() {
-    expandController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SizeTransition(
       axisAlignment: 1.0,
       sizeFactor: animation,
       child: widget.child,
     );
+  }
+
+  @override
+  void dispose() {
+    expandController.dispose();
+    super.dispose();
   }
 }

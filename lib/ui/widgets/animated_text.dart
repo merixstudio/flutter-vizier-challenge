@@ -15,7 +15,8 @@ class AnimatedText extends StatefulWidget {
   State<AnimatedText> createState() => _AnimatedTextState();
 }
 
-class _AnimatedTextState extends State<AnimatedText> with TickerProviderStateMixin {
+class _AnimatedTextState extends State<AnimatedText>
+    with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: AppConstants.animation.defaultDuration,
     vsync: this,
@@ -85,5 +86,11 @@ class _AnimatedTextState extends State<AnimatedText> with TickerProviderStateMix
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
