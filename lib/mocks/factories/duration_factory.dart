@@ -15,7 +15,7 @@ class _DurationFactory {
     switch (days) {
       case DateTime.daysPerWeek:
         return const Duration(
-          days: 7,
+          days: 6,
         );
       case DateTime.monthsPerYear:
         return const Duration(

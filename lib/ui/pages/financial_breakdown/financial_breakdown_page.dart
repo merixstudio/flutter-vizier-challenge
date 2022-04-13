@@ -1,6 +1,7 @@
 import 'dart:core';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:chart/chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vizier/config/constants/app_constants.dart';
@@ -11,16 +12,15 @@ import 'package:vizier/config/styles/text_styles/app_text_styles.dart';
 import 'package:vizier/cubits/account_financial_breakdown/account_financial_breakdown_cubit.dart';
 import 'package:vizier/cubits/chart_tabs/chart_tab.dart';
 import 'package:vizier/cubits/chart_tabs/chart_tabs_cubit.dart';
-import 'package:vizier/data/factory/stock_data_factory.dart';
+import 'package:vizier/data/factory/chart_factory.dart';
 import 'package:vizier/data/models/transaction/category/transaction_category_model.dart';
 import 'package:vizier/l10n/app_loc.dart';
+import 'package:vizier/ui/models/chart_multi_pie_section.dart';
 import 'package:vizier/ui/pages/financial_breakdown/financial_breakdown_page_arguments.dart';
 import 'package:vizier/ui/widgets/account_summary_cell.dart';
 import 'package:vizier/ui/widgets/adaptive/adaptive_app_bar.dart';
+import 'package:vizier/ui/widgets/animated_text.dart';
 import 'package:vizier/ui/widgets/chart_tabs_bar.dart';
-import 'package:vizier/ui/widgets/stock/models/item/stock_data_item.dart';
-import 'package:vizier/ui/widgets/stock/models/settings/stock_settings.dart';
-import 'package:vizier/ui/widgets/stock/stock.dart';
 import 'package:vizier/utils/currency_formatter_util.dart';
 import 'package:vizier/utils/date_formatter_util.dart';
 import 'package:vizier/utils/percentage_formatter_util.dart';
@@ -118,7 +118,7 @@ class FinancialBreakdownPage extends StatelessWidget with AutoRouteWrapper {
     BuildContext context, {
     required DateTime from,
     required DateTime to,
-    required List<StockDataMultiPieItem>? sections,
+    required List<ChartMultiPieSection>? sections,
     required List<TransactionCategoryModel> transactionCategories,
   }) {
     return Column(

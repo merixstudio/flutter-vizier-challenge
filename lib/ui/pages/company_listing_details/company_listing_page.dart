@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:chart/chart.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +12,7 @@ import 'package:vizier/cubits/chart_tabs/chart_tab.dart';
 import 'package:vizier/cubits/chart_tabs/chart_tabs_cubit.dart';
 import 'package:vizier/cubits/company_listing/details/company_listing_details_cubit.dart';
 import 'package:vizier/cubits/company_listing/history/company_listing_history_cubit.dart';
-import 'package:vizier/data/factory/stock_data_factory.dart';
+import 'package:vizier/data/factory/chart_factory.dart';
 import 'package:vizier/data/models/company_asset/company_asset_model.dart';
 import 'package:vizier/data/models/company_listing/details/company_listing_details_item_model.dart';
 import 'package:vizier/data/models/company_listing/history/company_listing_history_model.dart';
@@ -22,8 +23,6 @@ import 'package:vizier/ui/widgets/adaptive/adaptive_app_bar.dart';
 import 'package:vizier/ui/widgets/adaptive/adaptive_button.dart';
 import 'package:vizier/ui/widgets/chart_container.dart';
 import 'package:vizier/ui/widgets/performance_percentage_box.dart';
-import 'package:vizier/ui/widgets/stock/models/settings/stock_settings.dart';
-import 'package:vizier/ui/widgets/stock/stock.dart';
 import 'package:vizier/utils/currency_formatter_util.dart';
 
 part 'widgets/company_listing_assets.dart';

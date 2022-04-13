@@ -25,29 +25,15 @@ class _CompanyListingHistoryChart extends StatelessWidget {
         padding: EdgeInsets.only(
           top: AppDimensions.padding.smallValue,
         ),
-        child: data != null ? _buildChart(data: data) : const SizedBox.shrink(),
-      ),
-    );
-  }
-
-  Widget _buildChart({
-    required CompanyListingHistoryModel data,
-  }) {
-    return Stock.candle(
-      candleData: StockDataFactory.fromPortfolioCurrenciesHistoryModel(data),
-      candleSettings: StockCandleSettings(
-        axisYPadding: const EdgeInsets.only(
-          right: 20.0,
-        ),
-        axisXPadding: const EdgeInsets.only(
-          top: 8.0,
-        ),
-        axisXTextStyle: AppTextStyles.caption3().copyWith(
-          color: AppColors.white32,
-        ),
-        axisYTextStyle: AppTextStyles.caption3().copyWith(
-          color: AppColors.white64,
-        ),
+        child: data != null
+            ? Chart(
+                layers: ChartFactory.fromPortfolioCurrenciesHistoryModel(data),
+                padding: const EdgeInsets.only(
+                  left: 20.0,
+                  bottom: 8.0,
+                ),
+              )
+            : const SizedBox.shrink(),
       ),
     );
   }
