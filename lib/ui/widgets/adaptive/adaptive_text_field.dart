@@ -67,8 +67,10 @@ class _AdaptiveTextFieldState extends State<AdaptiveTextField> {
 
   @override
   void dispose() {
+    controller
+      ..removeListener(textEditingControllerListener)
+      ..dispose();
     super.dispose();
-    controller.removeListener(textEditingControllerListener);
   }
 
   void focusNodeListener() {

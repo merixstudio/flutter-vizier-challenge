@@ -57,6 +57,12 @@ class _CreditCardOverviewPageState extends State<CreditCardOverviewPage> {
   }
 
   @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AdaptiveAppBar(

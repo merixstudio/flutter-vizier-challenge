@@ -31,6 +31,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
   final OnboardingCubit _onboardingCubit = DI.resolve<OnboardingCubit>();
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<OnboardingCubit, OnboardingState>(
       bloc: _onboardingCubit,
