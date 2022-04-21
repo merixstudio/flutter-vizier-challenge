@@ -1,5 +1,5 @@
-import 'package:chart/chart.dart';
 import 'package:flutter/material.dart';
+import 'package:mrx_charts/mrx_charts.dart';
 import 'package:vizier/config/styles/colors/app_colors.dart';
 import 'package:vizier/config/styles/dimensions/app_dimensions.dart';
 import 'package:vizier/config/styles/text_styles/app_text_styles.dart';

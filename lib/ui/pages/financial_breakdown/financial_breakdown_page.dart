@@ -1,9 +1,9 @@
 import 'dart:core';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:chart/chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mrx_charts/mrx_charts.dart';
 import 'package:vizier/config/constants/app_constants.dart';
 import 'package:vizier/config/injector/di.dart';
 import 'package:vizier/config/styles/colors/app_colors.dart';

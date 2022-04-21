@@ -1,16 +1,6 @@
 import 'dart:math';
-import 'package:chart/models/axis/chart_axis_layer.dart';
-import 'package:chart/models/candle/chart_candle_layer.dart';
-import 'package:chart/models/chart_layer.dart';
-import 'package:chart/models/grid/chart_grid_layer.dart';
-import 'package:chart/models/group/bar/chart_group_bar_layer.dart';
-import 'package:chart/models/group/pie/chart_group_pie_layer.dart';
-import 'package:chart/models/highlight/chart_highlight_layer.dart';
-import 'package:chart/models/highlight/shape/chart_highlight_shape.dart';
-import 'package:chart/models/line/chart_line_layer.dart';
-import 'package:chart/models/tooltip/chart_tooltip_layer.dart';
-import 'package:chart/models/tooltip/shape/chart_tooltip_shape.dart';
 import 'package:flutter/material.dart';
+import 'package:mrx_charts/mrx_charts.dart';
 import 'package:vizier/config/styles/colors/app_colors.dart';
 import 'package:vizier/config/styles/text_styles/app_text_styles.dart';
 import 'package:vizier/data/models/account/breakdown/account_breakdown_model.dart';

@@ -1,6 +1,6 @@
-import 'package:chart/chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mrx_charts/mrx_charts.dart';
 import 'package:vizier/config/injector/di.dart';
 import 'package:vizier/config/styles/decorations/app_decorations.dart';
 import 'package:vizier/config/styles/dimensions/app_dimensions.dart';

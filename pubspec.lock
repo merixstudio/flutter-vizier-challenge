@@ -120,15 +120,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.1"
-  chart:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: main
-      resolved-ref: "4283669c322246e73020590b1edb569b5f10cf7e"
-      url: "git@gitlab.com:merixstudio/mobile/internal-projects/charts-flutter.git"
-    source: git
-    version: "0.0.1"
   checked_yaml:
     dependency: transitive
     description:
@@ -452,6 +443,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  mrx_charts:
+    dependency: "direct main"
+    description:
+      name: mrx_charts
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   nested:
     dependency: transitive
     description:
