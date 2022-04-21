@@ -65,16 +65,16 @@ class ChartFactory {
       );
     final double highest = items.highestBalanceOrSpent;
     final double maxY = highest.ceilTo(_getCeil(highest));
-    final from = (items.firstOrNull?.date)?.millisecondsSinceEpoch ?? 0.0;
-    final to = (items.lastOrNull?.date)?.millisecondsSinceEpoch ?? 0.0;
-    final frequency = (to - from) / (model.history.length - 1);
+    final double from = ((items.firstOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
+    final double to = ((items.lastOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
+    final double frequency = (to - from) / (model.history.length - 1);
     return [
       ChartAxisLayer(
         settings: ChartAxisSettings(
           x: ChartAxisSettingsAxis(
             frequency: frequency,
-            max: to.toDouble(),
-            min: from.toDouble(),
+            max: to,
+            min: from,
             textStyle: AppTextStyles.caption3().copyWith(
               color: Colors.white.withOpacity(0.6),
             ),
@@ -139,7 +139,7 @@ class ChartFactory {
     final double lowest = items.lowestValues.ceilFrom(_getCeil(items.lowestValues));
     final double from = ((items.firstOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
     final double to = ((items.lastOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
-    final frequency = (to - from) / (model.daysBack == DateTime.daysPerWeek ? 6.0 : 4.0);
+    final double frequency = (to - from) / (model.daysBack == DateTime.daysPerWeek ? 6.0 : 4.0);
     return [
       ChartGridLayer(
         settings: ChartGridSettings(
