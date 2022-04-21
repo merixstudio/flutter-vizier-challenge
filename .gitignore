@@ -50,8 +50,6 @@ app.*.map.json
 /android/app/release
 
 #FVM
-.fvm/flutter_sdk/
-.fvm/flutter_sdk
 .fvm/
 
 #Generated
