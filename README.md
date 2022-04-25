@@ -7,9 +7,15 @@ The main goal was to create an application with a custom UI without using extern
 
 We created all charts, animations, and custom widgets ourselves, using components provided by Flutter or even layers of canvas.
 
+
 The application uses randomly generated data, but thanks to the architecture in which it was written, it allows you to easily connect an external provider(e.g. REST API) without changing views or cubits.
 
 By making the project public, we can also show you how we work at Merixstudio, the application uses the standards developed by our developers.
+
+## Charts
+Due to the great interest in the graphs component, we decided to create a separate, public library.
+Vizier uses it, but the entire implementation is in the library.
+[Check it here!](https://pub.dev/packages/mrx_charts)
 
 ## Features
 - Smooth, beautiful animations
