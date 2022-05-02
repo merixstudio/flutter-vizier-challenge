@@ -37,6 +37,12 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar> with TickerPr
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animation,

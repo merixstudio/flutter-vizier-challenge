@@ -28,7 +28,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.8.2"
+    version: "2.9.0"
   auto_route:
     dependency: "direct main"
     description:
@@ -443,6 +443,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  mrx_charts:
+    dependency: "direct main"
+    description:
+      name: mrx_charts
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   nested:
     dependency: transitive
     description:
@@ -650,7 +657,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.9.0"
   stack_trace:
     dependency: transitive
     description:

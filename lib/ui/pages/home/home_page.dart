@@ -31,6 +31,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late final PageController pageController = PageController();
 
   @override
+  void dispose() {
+    tabController.dispose();
+    pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(

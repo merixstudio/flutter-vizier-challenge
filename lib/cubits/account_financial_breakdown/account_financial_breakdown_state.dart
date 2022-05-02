@@ -8,14 +8,14 @@ class AccountFinancialBreakdownState with _$AccountFinancialBreakdownState {
   const factory AccountFinancialBreakdownState.loaded({
     required DateTime from,
     required DateTime to,
-    required List<StockDataMultiPieItem> sections,
+    required List<ChartMultiPieSection> sections,
     required List<TransactionCategoryModel> transactionCategories,
   }) = _Loaded;
   const factory AccountFinancialBreakdownState.failure({
     required AppError appError,
   }) = _Failure;
 
-  List<StockDataMultiPieItem>? get sections => mapOrNull(
+  List<ChartMultiPieSection>? get sections => mapOrNull(
         loaded: (state) => state.sections,
       );
 

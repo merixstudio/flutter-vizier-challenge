@@ -51,28 +51,67 @@ class _FinancesMocks {
     final List<RetirementPlanDataModel> data;
     switch (daysTo) {
       case DateTime.daysPerWeek:
-        data = _generateRetirementData(7, daysTo);
+        data = _generateRetirementData(
+          7,
+          currentDate,
+          currentDate.add(
+            const Duration(
+              days: 6,
+            ),
+          ),
+        );
+        break;
+      case DateTime.monthsPerYear:
+        data = _generateRetirementData(
+          5,
+          currentDate,
+          currentDate.add(
+            const Duration(
+              days: 30,
+            ),
+          ),
+        );
+        break;
+      case DateTime.monthsPerYear * 30:
+        data = data = _generateRetirementData(
+          5,
+          currentDate,
+          currentDate.add(
+            const Duration(
+              days: 4 * 365,
+            ),
+          ),
+        );
         break;
       default:
-        data = _generateRetirementData(5, daysTo);
+        data = data = _generateRetirementData(
+          5,
+          currentDate,
+          currentDate.add(
+            const Duration(
+              days: 4 * 365,
+            ),
+          ),
+        );
     }
     return RetirementPlanModel(
       data: data,
       from: currentDate,
-      to: currentDate.add(
-        _DurationFactory.instance.standard(daysTo),
-      ),
+      to: currentDate.add(_DurationFactory.instance.standard(daysTo)),
     );
   }
 }
 
 extension /*Retirement Plan Data tools*/ on _FinancesMocks {
-  List<RetirementPlanDataModel> _generateRetirementData(int count, int daysTo) {
+  List<RetirementPlanDataModel> _generateRetirementData(int count, DateTime from, DateTime to) {
+    final int frequency = (to.millisecondsSinceEpoch - from.millisecondsSinceEpoch) ~/ (count - 1);
     return List.generate(
       count,
       (index) => RetirementPlanDataModel(
         date: currentDate.add(
-          _DurationFactory.instance.indexBased(daysTo, index),
+          Duration(
+            milliseconds: index * frequency,
+          ),
         ),
         value: index == 0
             ? cashBalance

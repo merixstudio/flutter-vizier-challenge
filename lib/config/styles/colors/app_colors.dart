@@ -38,6 +38,7 @@ class AppColors {
   static Color white12 = white.withOpacity(0.12);
   static Color white16 = white.withOpacity(0.16);
   static Color white32 = white.withOpacity(0.32);
+  static Color white60 = white.withOpacity(0.6);
   static Color white64 = white.withOpacity(0.64);
   static Color black08 = white.withOpacity(0.08);
   static Color black12 = white.withOpacity(0.12);

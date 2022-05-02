@@ -34,26 +34,14 @@ class _HomeMyFutureRetirementChart extends StatelessWidget {
     BuildContext context, {
     required RetirementPlanModel data,
   }) {
-    return Stock.line(
-      lineData: StockDataFactory.fromRetirementPlanModel(
+    return Chart(
+      layers: ChartFactory.fromRetirementPlanModel(
         data,
         daysTo: selectedTab.days(),
       ),
-      lineSettings: StockLineSettings(
-        axisYPadding: const EdgeInsets.only(
-          right: 20.0,
-        ),
-        axisXPadding: const EdgeInsets.only(
-          top: 8.0,
-        ),
-        axisXTextStyle: AppTextStyles.caption3().copyWith(
-          color: AppColors.white32,
-        ),
-        axisYTextStyle: AppTextStyles.caption3().copyWith(
-          color: AppColors.white64,
-        ),
-        thickness: 4,
-        radius: 6,
+      padding: const EdgeInsets.only(
+        bottom: 8.0,
+        left: 20.0,
       ),
     );
   }

@@ -1,9 +1,11 @@
-part of 'stock.dart';
+import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
+import 'package:vizier/ui/widgets/legend/models/legend.dart';
 
-class _StockLegends extends StatelessWidget {
-  final StockLegend legend;
+class Legends extends StatelessWidget {
+  final Legend legend;
 
-  const _StockLegends({
+  const Legends({
     required this.legend,
     Key? key,
   }) : super(key: key);

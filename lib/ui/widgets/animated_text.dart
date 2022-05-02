@@ -67,6 +67,12 @@ class _AnimatedTextState extends State<AnimatedText> with TickerProviderStateMix
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _opacity,

@@ -57,6 +57,8 @@ extension DoubleExtensions on double {
 
   double ceilTo(int value) => this + (value - (this % value));
 
+  double ceilFrom(int value) => this - this % value;
+
   String get formatUnits {
     final List<String> units = ['k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];
     for (int i = 0; i < units.length; i++) {
@@ -66,7 +68,7 @@ extension DoubleExtensions on double {
         return (value % 1 == 0 ? value.toInt().toString() : value.toStringAsFixed(1)) + units[i];
       }
     }
-    return '';
+    return toStringAsFixed(0);
   }
 }
 

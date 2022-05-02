@@ -1,10 +1,10 @@
-part of 'stock_legend.dart';
+part of 'legend.dart';
 
-class StockLegendItem {
+class LegendItem {
   final Color color;
   final String label;
 
-  const StockLegendItem({
+  const LegendItem({
     required this.color,
     required this.label,
   });

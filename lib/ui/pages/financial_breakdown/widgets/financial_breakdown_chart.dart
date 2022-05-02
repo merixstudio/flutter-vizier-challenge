@@ -3,7 +3,7 @@ part of '../financial_breakdown_page.dart';
 class _FinancialBreakdownChart extends StatelessWidget {
   final String? title;
   final String? content;
-  final List<StockDataMultiPieItem>? sections;
+  final List<ChartMultiPieSection>? sections;
   final ChartTab selectedTab;
   final Function(ChartTab tab) onTabSelected;
 
@@ -22,39 +22,44 @@ class _FinancialBreakdownChart extends StatelessWidget {
       children: [
         if (sections?.isNotEmpty ?? false)
           Expanded(
-            child: Stock.multiPie(
-              multiPieData: StockDataFactory.fromStockDataMultiPieItemList(
-                items: sections ?? [],
-                title: title ?? '',
-                content: content ?? '',
-              ),
-              multiPieSettings: StockMultiPieSettings(
-                angleOffset: -65.0,
-                contentTextStyle: AppTextStyles.h2().copyWith(
-                  color: AppColors.white,
+            child: Stack(
+              children: [
+                Chart(
+                  duration: AppConstants.animation.pieChartSweep,
+                  layers: ChartFactory.fromStockDataMultiPieItemList(sections ?? []),
                 ),
-                gapBetweenChartCircles: 18.0,
-                gapSweepAngle: 8.0,
-                paddingTooltip: const EdgeInsets.symmetric(
-                  horizontal: 12.0,
-                  vertical: 8.0,
+                Center(
+                  child: _buildCenterPie(),
                 ),
-                strokeWidth: 8.0,
-                titleTextStyle: AppTextStyles.caption3().copyWith(
-                  color: AppColors.white,
-                ),
-                tooltipAmountTextStyle: AppTextStyles.h6().copyWith(
-                  color: AppColors.navy,
-                ),
-                tooltipNameTextStyle: AppTextStyles.h6().copyWith(
-                  color: AppColors.primary100,
-                ),
-              ),
+              ],
             ),
           ),
         ChartTabsBar(
           selectedTab: selectedTab,
           onTabSelected: onTabSelected,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildCenterPie() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        AnimatedText(
+          text: title ?? '',
+          style: AppTextStyles.caption3().copyWith(
+            color: AppColors.white,
+          ),
+        ),
+        SizedBox(
+          height: AppDimensions.padding.smallValue,
+        ),
+        AnimatedText(
+          text: content ?? '',
+          style: AppTextStyles.h2().copyWith(
+            color: AppColors.white,
+          ),
         ),
       ],
     );
