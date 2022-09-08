@@ -48,6 +48,7 @@ ThemeData get lightTheme {
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: AppColors.black,
     ),
+    useMaterial3: true,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }
