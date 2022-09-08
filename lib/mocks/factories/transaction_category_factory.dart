@@ -34,7 +34,7 @@ class _TransactionCategoryFactory {
         minNumber: 100,
         maxNumber: 1500,
       ),
-    )..sort();
+    ).sorted((a, b) => a.compareTo(b));
     final double summaryValues = generatedValues.reduce(
       (value, element) => value + element,
     );
