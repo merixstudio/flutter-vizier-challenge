@@ -5,8 +5,7 @@ class _CreditCardExpiry extends StatelessWidget {
 
   const _CreditCardExpiry({
     required this.expiry,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

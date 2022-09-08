@@ -7,8 +7,8 @@ class Legends extends StatelessWidget {
 
   const Legends({
     required this.legend,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +52,7 @@ class _LegendItem extends StatelessWidget {
     required this.label,
     required this.sizeIcon,
     required this.textStyle,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +61,7 @@ class _LegendItem extends StatelessWidget {
       children: [
         SizedBox.fromSize(
           size: Size.square(sizeIcon),
-          child: Container(
+          child: DecoratedBox(
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,

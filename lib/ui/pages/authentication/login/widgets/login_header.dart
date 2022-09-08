@@ -6,7 +6,7 @@ import 'package:vizier/config/styles/text_styles/app_text_styles.dart';
 import 'package:vizier/l10n/app_loc.dart';
 
 class LoginHeader extends StatelessWidget {
-  const LoginHeader({Key? key}) : super(key: key);
+  const LoginHeader({super.key});
 
   @override
   Widget build(BuildContext context) {

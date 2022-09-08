@@ -6,7 +6,7 @@ import 'package:vizier/ui/widgets/ripple_remover.dart';
 class BottomNavigationPage extends StatefulWidget {
   static const String route = 'bottom_navigation';
 
-  const BottomNavigationPage({Key? key}) : super(key: key);
+  const BottomNavigationPage({super.key});
 
   @override
   _BottomNavigationPageState createState() => _BottomNavigationPageState();

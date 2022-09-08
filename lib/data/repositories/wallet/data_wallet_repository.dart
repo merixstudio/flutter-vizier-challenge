@@ -21,10 +21,11 @@ class DataWalletRepository extends WalletRepository {
     required AccountModel account,
   }) async {
     try {
-      final ResponseStatus<bool> _response = await walletDataSource.addWalletAccount(
+      final ResponseStatus<bool> response =
+          await walletDataSource.addWalletAccount(
         account: account,
       );
-      return ResponseStatus<bool>.success(_response.data!);
+      return ResponseStatus<bool>.success(response.data!);
     } catch (error) {
       return ResponseStatus<bool>.error(error);
     }
@@ -36,11 +37,12 @@ class DataWalletRepository extends WalletRepository {
     required AccountModel account,
   }) async {
     try {
-      final ResponseStatus<AccountBreakdownModel> _response = await walletDataSource.accountBreakdown(
+      final ResponseStatus<AccountBreakdownModel> response =
+          await walletDataSource.accountBreakdown(
         account: account,
         daysBack: daysBack,
       );
-      return ResponseStatus<AccountBreakdownModel>.success(_response.data!);
+      return ResponseStatus<AccountBreakdownModel>.success(response.data!);
     } catch (error) {
       return ResponseStatus<AccountBreakdownModel>.error(error);
     }
@@ -49,8 +51,9 @@ class DataWalletRepository extends WalletRepository {
   @override
   Future<ResponseStatus<List<GoalModel>>> goals() async {
     try {
-      final ResponseStatus<List<GoalModel>> _response = await walletDataSource.goals();
-      return ResponseStatus<List<GoalModel>>.success(_response.data!);
+      final ResponseStatus<List<GoalModel>> response =
+          await walletDataSource.goals();
+      return ResponseStatus<List<GoalModel>>.success(response.data!);
     } catch (error) {
       return ResponseStatus<List<GoalModel>>.error(error);
     }
@@ -59,8 +62,9 @@ class DataWalletRepository extends WalletRepository {
   @override
   Future<ResponseStatus<WalletModel>> wallet() async {
     try {
-      final ResponseStatus<WalletModel> _response = await walletDataSource.wallet();
-      return ResponseStatus<WalletModel>.success(_response.data!);
+      final ResponseStatus<WalletModel> response =
+          await walletDataSource.wallet();
+      return ResponseStatus<WalletModel>.success(response.data!);
     } catch (error) {
       return ResponseStatus<WalletModel>.error(error);
     }
@@ -71,10 +75,11 @@ class DataWalletRepository extends WalletRepository {
     required AccountModel accountModel,
   }) async {
     try {
-      final ResponseStatus<List<TransactionModel>> _response = await walletDataSource.transactionHistory(
+      final ResponseStatus<List<TransactionModel>> response =
+          await walletDataSource.transactionHistory(
         accountModel: accountModel,
       );
-      return ResponseStatus<List<TransactionModel>>.success(_response.data!);
+      return ResponseStatus<List<TransactionModel>>.success(response.data!);
     } catch (error) {
       return ResponseStatus<List<TransactionModel>>.error(error);
     }

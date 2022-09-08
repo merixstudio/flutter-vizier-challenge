@@ -12,8 +12,7 @@ class _FinancialBreakdownTransactionCell extends StatelessWidget {
 
   const _FinancialBreakdownTransactionCell({
     required this.transactionCategory,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

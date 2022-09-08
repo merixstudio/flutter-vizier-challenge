@@ -5,8 +5,7 @@ class _CreditCardNumber extends StatelessWidget {
 
   const _CreditCardNumber({
     required this.number,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

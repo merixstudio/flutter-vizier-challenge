@@ -10,8 +10,8 @@ class TransactionCell extends StatelessWidget {
 
   const TransactionCell({
     required this.transactionModel,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -34,7 +34,7 @@ part 'widgets/home_my_wallet_goals_section.dart';
 part 'widgets/home_my_wallet_summary.dart';
 
 class HomeMyWalletContent extends StatelessWidget {
-  const HomeMyWalletContent({Key? key}) : super(key: key);
+  const HomeMyWalletContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,8 @@ class HomeMyWalletContent extends StatelessWidget {
             builder: (context, state) => state.maybeMap(
               loaded: (state) => _HomeMyWalletGoalsSection(
                 goals: state.goals,
-                onMorePressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+                onMorePressed: () =>
+                    AdaptiveAlertDialogFactory.showContentUnavailable(context),
               ),
               orElse: () => const SizedBox.shrink(),
             ),
@@ -64,7 +65,8 @@ class HomeMyWalletContent extends StatelessWidget {
             height: AppDimensions.padding.defaultValue,
           ),
           _HomeMyWalletFooterBanner(
-            onPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+            onPressed: () =>
+                AdaptiveAlertDialogFactory.showContentUnavailable(context),
           ),
         ],
       ),
@@ -99,10 +101,12 @@ class HomeMyWalletContent extends StatelessWidget {
               ),
             ),
           ),
-          onConnectPressed: () => context.router.pushNamed(CreditCardFormPage.route),
+          onConnectPressed: () =>
+              context.router.pushNamed(CreditCardFormPage.route),
           onMorePressed: () => BottomActionsSheetFactory.showWalletMoreModal(
             context,
-            onCardsOverviewPressed: () => context.router.pushNamed(CreditCardOverviewPage.route),
+            onCardsOverviewPressed: () =>
+                context.router.pushNamed(CreditCardOverviewPage.route),
           ),
         ),
       ],

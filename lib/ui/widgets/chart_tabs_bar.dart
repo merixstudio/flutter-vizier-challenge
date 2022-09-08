@@ -13,8 +13,8 @@ class ChartTabsBar extends StatelessWidget {
   const ChartTabsBar({
     required this.selectedTab,
     required this.onTabSelected,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class ChartTabsBar extends StatelessWidget {
   }
 
   Widget _buildActiveTab(String text) {
-    return Container(
+    return DecoratedBox(
       decoration: const BoxDecoration(
         color: AppColors.white,
         shape: BoxShape.circle,

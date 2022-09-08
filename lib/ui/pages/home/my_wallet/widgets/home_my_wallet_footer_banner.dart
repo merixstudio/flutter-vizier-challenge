@@ -5,8 +5,7 @@ class _HomeMyWalletFooterBanner extends StatelessWidget {
 
   const _HomeMyWalletFooterBanner({
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

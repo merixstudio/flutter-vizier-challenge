@@ -11,8 +11,7 @@ class _OfferCell extends StatelessWidget {
     required this.content,
     required this.assetImage,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

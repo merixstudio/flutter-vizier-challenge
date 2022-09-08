@@ -8,8 +8,8 @@ class PerformancePercentageBox extends StatelessWidget {
 
   const PerformancePercentageBox({
     required this.value,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

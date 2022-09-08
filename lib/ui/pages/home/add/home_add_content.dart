@@ -12,7 +12,7 @@ part 'widgets/home_add_action_cell.dart';
 part 'widgets/home_add_other_services_section.dart';
 
 class HomeAddContent extends StatelessWidget {
-  const HomeAddContent({Key? key}) : super(key: key);
+  const HomeAddContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +21,20 @@ class HomeAddContent extends StatelessWidget {
       child: Column(
         children: [
           _HomeAddAccountsSection(
-            onMorePressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+            onMorePressed: () =>
+                AdaptiveAlertDialogFactory.showContentUnavailable(context),
           ),
           _HomeAddOtherServicesSection(
-            onMorePressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
-            onVaultPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
-            onCommoditiesPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
-            onCreditPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
-            onInsurancePressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+            onMorePressed: () =>
+                AdaptiveAlertDialogFactory.showContentUnavailable(context),
+            onVaultPressed: () =>
+                AdaptiveAlertDialogFactory.showContentUnavailable(context),
+            onCommoditiesPressed: () =>
+                AdaptiveAlertDialogFactory.showContentUnavailable(context),
+            onCreditPressed: () =>
+                AdaptiveAlertDialogFactory.showContentUnavailable(context),
+            onInsurancePressed: () =>
+                AdaptiveAlertDialogFactory.showContentUnavailable(context),
           ),
         ],
       ),

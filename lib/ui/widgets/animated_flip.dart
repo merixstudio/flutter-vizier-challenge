@@ -8,8 +8,8 @@ class AnimatedFlip extends StatefulWidget {
     required this.back,
     required this.front,
     required this.isFront,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget back;
   final Widget front;
@@ -19,7 +19,8 @@ class AnimatedFlip extends StatefulWidget {
   State<AnimatedFlip> createState() => _AnimatedFlipState();
 }
 
-class _AnimatedFlipState extends State<AnimatedFlip> with TickerProviderStateMixin {
+class _AnimatedFlipState extends State<AnimatedFlip>
+    with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: AppConstants.animation.defaultDuration * 3,
     vsync: this,

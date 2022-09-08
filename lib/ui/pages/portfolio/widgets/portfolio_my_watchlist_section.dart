@@ -9,8 +9,7 @@ class _PortfolioMyWatchlistSection extends StatelessWidget {
     required this.companyAssets,
     required this.onCompanyPressed,
     required this.onMorePressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -5,8 +5,7 @@ class _CreditCardTransactionsList extends StatelessWidget {
 
   const _CreditCardTransactionsList({
     required this.transactions,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

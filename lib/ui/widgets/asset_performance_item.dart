@@ -16,8 +16,8 @@ class AssetPerformanceItem extends StatelessWidget {
     this.assetChange,
     this.assetPercentageChange,
     this.content,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

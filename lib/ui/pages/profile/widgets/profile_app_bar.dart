@@ -2,10 +2,9 @@ part of '../profile_page.dart';
 
 class _ProfileAppBar extends AdaptiveAppBar {
   _ProfileAppBar(
-    BuildContext context, {
+    super.context, {
     required VoidCallback onLogoutPressed,
   }) : super(
-          context,
           actions: [
             _buildLogoutButton(
               context,

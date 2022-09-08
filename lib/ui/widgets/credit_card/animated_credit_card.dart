@@ -34,8 +34,8 @@ class AnimatedCreditCard extends StatelessWidget {
     this.balance = '',
     this.cvv = '',
     this.logo = '',
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

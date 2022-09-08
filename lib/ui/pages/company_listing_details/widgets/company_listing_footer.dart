@@ -7,8 +7,7 @@ class _CompanyListingFooter extends StatelessWidget {
   const _CompanyListingFooter({
     required this.details,
     required this.onMorePressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,8 @@ class _CompanyListingFooter extends StatelessWidget {
             SizedBox(
               height: AppDimensions.padding.bigValue,
             ),
-            ...details.map(_buildDetails).flattened.toList()..removeLastIfNotEmpty(),
+            ...details.map(_buildDetails).flattened.toList()
+              ..removeLastIfNotEmpty(),
           ],
         ),
       ),

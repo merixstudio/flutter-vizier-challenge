@@ -9,8 +9,7 @@ class _CompanyListingAssets extends StatelessWidget {
     required this.change,
     required this.percentage,
     required this.value,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

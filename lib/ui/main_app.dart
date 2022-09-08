@@ -15,8 +15,8 @@ class MainApp extends StatefulWidget {
   const MainApp({
     required this.isFirstTimeOpened,
     required this.isSessionActive,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _MainAppState createState() => _MainAppState();
@@ -35,11 +35,11 @@ class _MainAppState extends State<MainApp> {
         ),
         BlocProvider(
           create: (_) {
-            final UserCubit _userCubit = DI.resolve<UserCubit>();
+            final UserCubit userCubit = DI.resolve<UserCubit>();
             if (widget.isSessionActive) {
-              _userCubit.fetchMe();
+              userCubit.fetchMe();
             }
-            return _userCubit;
+            return userCubit;
           },
         ),
       ],

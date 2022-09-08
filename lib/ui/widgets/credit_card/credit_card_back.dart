@@ -5,8 +5,7 @@ class _CreditCardBack extends StatelessWidget {
 
   const _CreditCardBack({
     required this.cvv,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

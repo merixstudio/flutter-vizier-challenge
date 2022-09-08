@@ -16,11 +16,12 @@ abstract class AdaptiveAlertDialogFactory {
     String? content,
     bool rootNavigator = false,
   }) {
-    final AdaptiveWidgetType _adaptiveWidgetType = AdaptiveWidgetUtil.getWidgetTypeOf(
+    final AdaptiveWidgetType adaptiveWidgetType =
+        AdaptiveWidgetUtil.getWidgetTypeOf(
       context,
       platform: Platform.adaptive,
     );
-    switch (_adaptiveWidgetType) {
+    switch (adaptiveWidgetType) {
       case AdaptiveWidgetType.cupertino:
         return _showCupertinoDialog(
           context,

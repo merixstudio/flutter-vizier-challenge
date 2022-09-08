@@ -11,8 +11,7 @@ class _OfferDetailsHeader extends StatelessWidget {
     required this.leftContent,
     required this.rightTitle,
     required this.rightContent,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

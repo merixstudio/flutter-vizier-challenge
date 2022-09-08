@@ -24,8 +24,8 @@ class FinancesHistoryChart extends StatelessWidget {
     required this.selectedTab,
     required this.onTabSelected,
     this.onMorePressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -21,8 +21,8 @@ class AccountSummaryCell extends StatelessWidget {
     required this.balance,
     required this.change,
     this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   factory AccountSummaryCell.fromAccountModel(
     AccountModel account, {

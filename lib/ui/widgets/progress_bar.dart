@@ -14,8 +14,8 @@ class ProgressBar extends StatelessWidget {
     required this.currentProgress,
     this.summary,
     this.goal,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

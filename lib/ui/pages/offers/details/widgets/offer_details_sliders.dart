@@ -7,8 +7,7 @@ class _OfferDetailsSliders extends StatelessWidget {
   const _OfferDetailsSliders({
     required this.onChanged,
     required this.sliders,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,11 @@ class _OfferDetailsSliders extends StatelessWidget {
                   divisions: element.maxValue ~/ element.frequency,
                   label: element.label,
                   onChanged: (value) => onChanged(element, value),
-                  value: _buildValue(context, element.type, (element.maxValue * element.current).toInt()),
+                  value: _buildValue(
+                    context,
+                    element.type,
+                    (element.maxValue * element.current).toInt(),
+                  ),
                 ),
                 SizedBox(
                   height: AppDimensions.padding.bigValue,
@@ -41,7 +44,8 @@ class _OfferDetailsSliders extends StatelessWidget {
   String _buildValue(BuildContext context, OfferSliderType type, int value) {
     switch (type) {
       case OfferSliderType.month:
-        return AppLoc.of(context).offerDetailsPageSliderMonths(value.toString());
+        return AppLoc.of(context)
+            .offerDetailsPageSliderMonths(value.toString());
       case OfferSliderType.price:
         return CurrencyFormatterUtil.instance.format(
           value: value.toDouble(),

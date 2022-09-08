@@ -15,8 +15,8 @@ class ArrowChangeValue extends StatelessWidget {
     this.changeColor,
     this.changeStyle,
     this.arrowOnRightSide = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -13,8 +13,7 @@ class _HomeMyFutureAssetsHeader extends StatelessWidget {
     required this.date,
     required this.goal,
     required this.goalProgress,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

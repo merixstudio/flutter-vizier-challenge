@@ -15,8 +15,7 @@ class _HomeMyWalletSummary extends StatelessWidget {
     required this.onAccountPressed,
     required this.onConnectPressed,
     required this.onMorePressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

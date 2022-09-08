@@ -17,8 +17,9 @@ class DataFinancesRepository extends FinancesRepository {
   @override
   Future<ResponseStatus<FinancesOverviewModel>> overview() async {
     try {
-      final ResponseStatus<FinancesOverviewModel> _response = await financesDataSource.overview();
-      return ResponseStatus<FinancesOverviewModel>.success(_response.data!);
+      final ResponseStatus<FinancesOverviewModel> response =
+          await financesDataSource.overview();
+      return ResponseStatus<FinancesOverviewModel>.success(response.data!);
     } catch (error) {
       return ResponseStatus<FinancesOverviewModel>.error(error);
     }
@@ -29,10 +30,11 @@ class DataFinancesRepository extends FinancesRepository {
     required int daysBack,
   }) async {
     try {
-      final ResponseStatus<FinancialHistoryModel> _response = await financesDataSource.history(
+      final ResponseStatus<FinancialHistoryModel> response =
+          await financesDataSource.history(
         daysBack: daysBack,
       );
-      return ResponseStatus<FinancialHistoryModel>.success(_response.data!);
+      return ResponseStatus<FinancialHistoryModel>.success(response.data!);
     } catch (error) {
       return ResponseStatus<FinancialHistoryModel>.error(error);
     }
@@ -43,10 +45,11 @@ class DataFinancesRepository extends FinancesRepository {
     required int daysTo,
   }) async {
     try {
-      final ResponseStatus<RetirementPlanModel> _response = await financesDataSource.retirementPlan(
+      final ResponseStatus<RetirementPlanModel> response =
+          await financesDataSource.retirementPlan(
         daysTo: daysTo,
       );
-      return ResponseStatus<RetirementPlanModel>.success(_response.data!);
+      return ResponseStatus<RetirementPlanModel>.success(response.data!);
     } catch (error) {
       return ResponseStatus<RetirementPlanModel>.error(error);
     }

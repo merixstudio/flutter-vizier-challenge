@@ -7,8 +7,7 @@ class _HomeMyWalletGoalsSection extends StatelessWidget {
   const _HomeMyWalletGoalsSection({
     required this.goals,
     required this.onMorePressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,8 @@ class _HomeMyWalletGoalsSection extends StatelessWidget {
                 goal: goal.goal,
                 change: goal.change,
                 reached: goal.reached,
-                onPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+                onPressed: () =>
+                    AdaptiveAlertDialogFactory.showContentUnavailable(context),
               ),
             ),
           )

@@ -6,22 +6,17 @@ import 'package:vizier/ui/widgets/adaptive/adaptive_button.dart';
 class AdaptiveAppBar extends AppBar {
   AdaptiveAppBar(
     BuildContext context, {
-    List<Widget>? actions,
-    Color? backgroundColor,
-    bool? centerTitle,
-    IconThemeData? iconTheme,
-    Widget? title,
+    super.actions,
+    super.backgroundColor,
+    super.centerTitle,
+    super.iconTheme,
+    super.title,
   }) : super(
-          actions: actions,
-          backgroundColor: backgroundColor,
-          centerTitle: centerTitle,
           elevation: 0.0,
-          iconTheme: iconTheme,
           leading: _buildLeadingNavigationButton(
             context,
             iconTheme: iconTheme,
           ),
-          title: title,
         );
 
   static Widget? _buildLeadingNavigationButton(
@@ -29,7 +24,8 @@ class AdaptiveAppBar extends AppBar {
     IconThemeData? iconTheme,
   }) {
     final ModalRoute<Object?>? parentRoute = ModalRoute.of(context);
-    final bool useCloseButton = parentRoute is PageRoute<dynamic> && parentRoute.fullscreenDialog;
+    final bool useCloseButton =
+        parentRoute is PageRoute<dynamic> && parentRoute.fullscreenDialog;
 
     if (parentRoute?.canPop ?? true) {
       return _NavigationButton(
@@ -53,8 +49,7 @@ class _NavigationButton extends StatelessWidget {
   const _NavigationButton({
     required this.icon,
     required this.iconTheme,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +60,8 @@ class _NavigationButton extends StatelessWidget {
       onPressed: () => Navigator.maybePop(context),
       child: Icon(
         icon,
-        color: iconTheme?.color ?? Theme.of(context).appBarTheme.iconTheme?.color,
+        color:
+            iconTheme?.color ?? Theme.of(context).appBarTheme.iconTheme?.color,
       ),
     );
   }

@@ -30,8 +30,8 @@ class OfferDetailsPage extends StatelessWidget implements AutoRouteWrapper {
 
   const OfferDetailsPage({
     required this.offer,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -108,11 +108,13 @@ class OfferDetailsPage extends StatelessWidget implements AutoRouteWrapper {
         children: [
           _OfferDetailsHeader(
             leftTitle: CurrencyFormatterUtil.instance.format(
-              value: context.watch<OfferDetailsCubit>().state.expectedValue ?? 0.0,
+              value:
+                  context.watch<OfferDetailsCubit>().state.expectedValue ?? 0.0,
             ),
             leftContent: offer.type.leftContent(context),
             rightTitle: CurrencyFormatterUtil.instance.format(
-              value: context.watch<OfferDetailsCubit>().state.calculatedValue ?? 0.0,
+              value: context.watch<OfferDetailsCubit>().state.calculatedValue ??
+                  0.0,
             ),
             rightContent: offer.type.rightContent(context),
           ),

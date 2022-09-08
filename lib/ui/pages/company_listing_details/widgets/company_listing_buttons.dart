@@ -7,8 +7,7 @@ class _CompanyListingButtons extends StatelessWidget {
   const _CompanyListingButtons({
     required this.onBuyPressed,
     required this.onSellPressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

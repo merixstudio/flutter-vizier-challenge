@@ -5,8 +5,7 @@ class _FinancesHeader extends StatelessWidget {
 
   const _FinancesHeader({
     required this.cashBalance,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

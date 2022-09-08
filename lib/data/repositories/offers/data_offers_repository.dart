@@ -15,8 +15,9 @@ class DataOffersRepository extends OffersRepository {
   @override
   Future<ResponseStatus<List<OfferModel>>> all() async {
     try {
-      final ResponseStatus<List<OfferModel>> _response = await offersDataSource.all();
-      return ResponseStatus<List<OfferModel>>.success(_response.data!);
+      final ResponseStatus<List<OfferModel>> response =
+          await offersDataSource.all();
+      return ResponseStatus<List<OfferModel>>.success(response.data!);
     } catch (error) {
       return ResponseStatus<List<OfferModel>>.error(error);
     }

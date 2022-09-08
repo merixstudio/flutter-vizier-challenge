@@ -18,7 +18,6 @@ class AdaptiveTextField extends StatefulWidget {
   final ValidationRuleCallback? validator;
 
   const AdaptiveTextField({
-    Key? key,
     this.autocorrect = true,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.inputFormatters,
@@ -28,7 +27,8 @@ class AdaptiveTextField extends StatefulWidget {
     this.onChanged,
     this.textInputAction,
     this.validator,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _AdaptiveTextFieldState createState() => _AdaptiveTextFieldState();

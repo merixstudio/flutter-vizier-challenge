@@ -37,8 +37,8 @@ class CompanyListingPage extends StatelessWidget implements AutoRouteWrapper {
 
   const CompanyListingPage({
     required this.companyAsset,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -104,11 +104,13 @@ class CompanyListingPage extends StatelessWidget implements AutoRouteWrapper {
             ),
           ),
           Expanded(
-            child: BlocBuilder<CompanyListingHistoryCubit, CompanyListingHistoryState>(
+            child: BlocBuilder<CompanyListingHistoryCubit,
+                CompanyListingHistoryState>(
               builder: (_, state) => _CompanyListingHistoryChart(
                 data: state.companyListingHistoryModel,
                 isLoading: state.isLoading,
-                onTabSelected: (tab) => context.read<ChartTabsCubit>().changeTab(tab),
+                onTabSelected: (tab) =>
+                    context.read<ChartTabsCubit>().changeTab(tab),
                 selectedTab: context.watch<ChartTabsCubit>().state.selectedTab,
               ),
             ),
@@ -118,8 +120,10 @@ class CompanyListingPage extends StatelessWidget implements AutoRouteWrapper {
               horizontal: AppDimensions.padding.defaultValue,
             ),
             child: _CompanyListingButtons(
-              onBuyPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
-              onSellPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+              onBuyPressed: () =>
+                  AdaptiveAlertDialogFactory.showContentUnavailable(context),
+              onSellPressed: () =>
+                  AdaptiveAlertDialogFactory.showContentUnavailable(context),
             ),
           ),
           SizedBox(
@@ -128,7 +132,8 @@ class CompanyListingPage extends StatelessWidget implements AutoRouteWrapper {
           BlocBuilder<CompanyListingDetailsCubit, CompanyListingDetailsState>(
             builder: (_, state) => _CompanyListingFooter(
               details: state.details,
-              onMorePressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+              onMorePressed: () =>
+                  AdaptiveAlertDialogFactory.showContentUnavailable(context),
             ),
           ),
         ],
