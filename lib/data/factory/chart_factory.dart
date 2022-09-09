@@ -1,4 +1,6 @@
 import 'dart:math';
+
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:mrx_charts/mrx_charts.dart';
 import 'package:vizier/config/styles/colors/app_colors.dart';
@@ -18,11 +20,13 @@ import 'package:vizier/ui/models/chart_multi_pie_section.dart';
 class ChartFactory {
   const ChartFactory._();
 
-  static List<ChartMultiPieSection> fromAccountBreakdownModel(AccountBreakdownModel accountBreakdown) {
-    final List<TransactionCategoryModel> transactionCategories = accountBreakdown.transactionCategories
-      ..sort(
-        (a, b) => b.value.compareTo(a.value),
-      );
+  static List<ChartMultiPieSection> fromAccountBreakdownModel(
+    AccountBreakdownModel accountBreakdown,
+  ) {
+    final List<TransactionCategoryModel> transactionCategories =
+        accountBreakdown.transactionCategories.sorted(
+      (a, b) => b.value.compareTo(a.value),
+    );
 
     return [
       if (transactionCategories.length > 2)
@@ -58,15 +62,18 @@ class ChartFactory {
         .toList();
   }
 
-  static List<ChartLayer> fromFinancialHistoryModel(FinancialHistoryModel model) {
-    final List<FinancialHistoryDataModel> items = model.history
-      ..sort(
-        (a, b) => a.date.compareTo(b.date),
-      );
+  static List<ChartLayer> fromFinancialHistoryModel(
+    FinancialHistoryModel model,
+  ) {
+    final List<FinancialHistoryDataModel> items = model.history.sorted(
+      (a, b) => a.date.compareTo(b.date),
+    );
     final double highest = items.highestBalanceOrSpent;
     final double maxY = highest.ceilTo(_getCeil(highest));
-    final double from = ((items.firstOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
-    final double to = ((items.lastOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
+    final double from =
+        ((items.firstOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
+    final double to =
+        ((items.lastOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
     final double frequency = (to - from) / (model.history.length - 1);
     return [
       ChartAxisLayer(
@@ -88,7 +95,10 @@ class ChartFactory {
             ),
           ),
         ),
-        labelX: (value) => _getLabelAxisX(model.daysBack, DateTime.fromMillisecondsSinceEpoch(value.toInt())),
+        labelX: (value) => _getLabelAxisX(
+          model.daysBack,
+          DateTime.fromMillisecondsSinceEpoch(value.toInt()),
+        ),
         labelY: (value) => value == 0.0 ? '' : value.formatUnits,
       ),
       ChartGroupBarLayer(
@@ -133,13 +143,21 @@ class ChartFactory {
     ];
   }
 
-  static List<ChartLayer> fromPortfolioCurrenciesHistoryModel(CompanyListingHistoryModel model) {
-    final List<CompanyListingHistoryDataModel> items = model.history.sortedByDate();
-    final double highest = items.highestValues.ceilTo(_getCeil(items.highestValues));
-    final double lowest = items.lowestValues.ceilFrom(_getCeil(items.lowestValues));
-    final double from = ((items.firstOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
-    final double to = ((items.lastOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
-    final double frequency = (to - from) / (model.daysBack == DateTime.daysPerWeek ? 6.0 : 4.0);
+  static List<ChartLayer> fromPortfolioCurrenciesHistoryModel(
+    CompanyListingHistoryModel model,
+  ) {
+    final List<CompanyListingHistoryDataModel> items =
+        model.history.sortedByDate();
+    final double highest =
+        items.highestValues.ceilTo(_getCeil(items.highestValues));
+    final double lowest =
+        items.lowestValues.ceilFrom(_getCeil(items.lowestValues));
+    final double from =
+        ((items.firstOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
+    final double to =
+        ((items.lastOrNull?.date)?.millisecondsSinceEpoch)?.toDouble() ?? 0.0;
+    final double frequency =
+        (to - from) / (model.daysBack == DateTime.daysPerWeek ? 6.0 : 4.0);
     return [
       ChartGridLayer(
         settings: ChartGridSettings(
@@ -176,14 +194,19 @@ class ChartFactory {
             ),
           ),
         ),
-        labelX: (value) => _getLabelAxisX(model.daysBack, DateTime.fromMillisecondsSinceEpoch(value.toInt())),
+        labelX: (value) => _getLabelAxisX(
+          model.daysBack,
+          DateTime.fromMillisecondsSinceEpoch(value.toInt()),
+        ),
         labelY: (value) => value.formatUnits,
       ),
       ChartCandleLayer(
         items: model.history
             .map(
               (element) => ChartCandleDataItem(
-                color: element.isProfit ? AppColors.success100 : AppColors.error300,
+                color: element.isProfit
+                    ? AppColors.success100
+                    : AppColors.error300,
                 value1: ChartCandleDataItemValue(
                   max: element.value1.max,
                   min: element.value1.min,
@@ -201,7 +224,9 @@ class ChartFactory {
     ];
   }
 
-  static List<ChartLayer> fromStockDataMultiPieItemList(List<ChartMultiPieSection> items) {
+  static List<ChartLayer> fromStockDataMultiPieItemList(
+    List<ChartMultiPieSection> items,
+  ) {
     return [
       ChartGroupPieLayer(
         items: items
@@ -244,10 +269,9 @@ class ChartFactory {
     RetirementPlanModel retirementPlanModel, {
     required int daysTo,
   }) {
-    final List<RetirementPlanDataModel> items = retirementPlanModel.data
-      ..sort(
-        (a, b) => a.date.compareTo(b.date),
-      );
+    final List<RetirementPlanDataModel> items = retirementPlanModel.data.sorted(
+      (a, b) => a.date.compareTo(b.date),
+    );
     final double maxY = items
         .map(
           (e) => e.value,
@@ -284,7 +308,10 @@ class ChartFactory {
             ),
           ),
         ),
-        labelX: (value) => _getLabelAxisX(daysTo, DateTime.fromMillisecondsSinceEpoch(value.toInt())),
+        labelX: (value) => _getLabelAxisX(
+          daysTo,
+          DateTime.fromMillisecondsSinceEpoch(value.toInt()),
+        ),
         labelY: (value) => value.formatUnits,
       ),
       ChartLineLayer(

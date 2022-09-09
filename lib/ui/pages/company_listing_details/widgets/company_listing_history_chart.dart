@@ -11,8 +11,7 @@ class _CompanyListingHistoryChart extends StatelessWidget {
     required this.onTabSelected,
     required this.selectedTab,
     this.data,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

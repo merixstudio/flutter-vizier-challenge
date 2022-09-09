@@ -18,8 +18,9 @@ class DataPortfolioRepository extends PortfolioRepository {
   @override
   Future<ResponseStatus<PortfolioOverviewModel>> overview() async {
     try {
-      final ResponseStatus<PortfolioOverviewModel> _response = await portfolioDataSource.overview();
-      return ResponseStatus<PortfolioOverviewModel>.success(_response.data!);
+      final ResponseStatus<PortfolioOverviewModel> response =
+          await portfolioDataSource.overview();
+      return ResponseStatus<PortfolioOverviewModel>.success(response.data!);
     } catch (error) {
       return ResponseStatus<PortfolioOverviewModel>.error(error);
     }
@@ -28,8 +29,9 @@ class DataPortfolioRepository extends PortfolioRepository {
   @override
   Future<ResponseStatus<List<CompanyAssetModel>>> watchlist() async {
     try {
-      final ResponseStatus<List<CompanyAssetModel>> _response = await portfolioDataSource.watchlist();
-      return ResponseStatus<List<CompanyAssetModel>>.success(_response.data!);
+      final ResponseStatus<List<CompanyAssetModel>> response =
+          await portfolioDataSource.watchlist();
+      return ResponseStatus<List<CompanyAssetModel>>.success(response.data!);
     } catch (error) {
       return ResponseStatus<List<CompanyAssetModel>>.error(error);
     }
@@ -38,8 +40,9 @@ class DataPortfolioRepository extends PortfolioRepository {
   @override
   Future<ResponseStatus<List<CompanyListingDetailsItemModel>>> details() async {
     try {
-      final ResponseStatus<List<CompanyListingDetailsItemModel>> _response = await portfolioDataSource.details();
-      return ResponseStatus.success(_response.data!);
+      final ResponseStatus<List<CompanyListingDetailsItemModel>> response =
+          await portfolioDataSource.details();
+      return ResponseStatus.success(response.data!);
     } catch (error) {
       return ResponseStatus<List<CompanyListingDetailsItemModel>>.error(error);
     }
@@ -51,11 +54,12 @@ class DataPortfolioRepository extends PortfolioRepository {
     required int daysBack,
   }) async {
     try {
-      final ResponseStatus<CompanyListingHistoryModel> _response = await portfolioDataSource.history(
+      final ResponseStatus<CompanyListingHistoryModel> response =
+          await portfolioDataSource.history(
         companyAsset: companyAsset,
         daysBack: daysBack,
       );
-      return ResponseStatus.success(_response.data!);
+      return ResponseStatus.success(response.data!);
     } catch (error) {
       return ResponseStatus<CompanyListingHistoryModel>.error(error);
     }

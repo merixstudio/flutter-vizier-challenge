@@ -23,7 +23,7 @@ part 'widgets/profile_switch_button.dart';
 class ProfilePage extends StatelessWidget implements AutoRouteWrapper {
   static const String route = 'profile-page';
 
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -80,7 +80,8 @@ class ProfilePage extends StatelessWidget implements AutoRouteWrapper {
   Widget _buildFirstActions(BuildContext context) {
     return _ProfileActionButton(
       title: AppLoc.of(context).profilePageMyAccountButton,
-      onPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+      onPressed: () =>
+          AdaptiveAlertDialogFactory.showContentUnavailable(context),
     );
   }
 
@@ -90,12 +91,14 @@ class ProfilePage extends StatelessWidget implements AutoRouteWrapper {
         _buildNotificationsCell(context),
         _ProfileActionButton(
           title: AppLoc.of(context).profilePageAboutUsButton,
-          onPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+          onPressed: () =>
+              AdaptiveAlertDialogFactory.showContentUnavailable(context),
         ),
         const Divider(),
         _ProfileActionButton(
           title: AppLoc.of(context).profilePageTermsButton,
-          onPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+          onPressed: () =>
+              AdaptiveAlertDialogFactory.showContentUnavailable(context),
         ),
       ],
     );

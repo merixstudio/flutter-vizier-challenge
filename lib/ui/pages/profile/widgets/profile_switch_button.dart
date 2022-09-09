@@ -11,8 +11,7 @@ class _ProfileSwitchButton extends StatelessWidget {
     required this.title,
     required this.value,
     required this.onChanged,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

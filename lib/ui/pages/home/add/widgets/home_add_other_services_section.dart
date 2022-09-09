@@ -13,8 +13,7 @@ class _HomeAddOtherServicesSection extends StatelessWidget {
     required this.onCommoditiesPressed,
     required this.onCreditPressed,
     required this.onInsurancePressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

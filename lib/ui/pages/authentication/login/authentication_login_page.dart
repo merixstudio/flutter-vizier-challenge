@@ -22,14 +22,15 @@ import 'package:vizier/utils/validation/validation_builder.dart';
 class AuthenticationLoginPage extends StatefulWidget {
   static const String route = 'login';
 
-  const AuthenticationLoginPage({Key? key}) : super(key: key);
+  const AuthenticationLoginPage({super.key});
 
   @override
   State<StatefulWidget> createState() => _AuthenticationLoginPageState();
 }
 
 class _AuthenticationLoginPageState extends State<AuthenticationLoginPage> {
-  final AuthenticationLoginCubit _loginCubit = DI.resolve<AuthenticationLoginCubit>();
+  final AuthenticationLoginCubit _loginCubit =
+      DI.resolve<AuthenticationLoginCubit>();
   final GlobalKey<FormState> _formKey = GlobalKey();
   AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
 
@@ -156,7 +157,8 @@ class _AuthenticationLoginPageState extends State<AuthenticationLoginPage> {
         ),
         AdaptiveButton(
           //TODO (MT): Handle SignUp
-          onPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+          onPressed: () =>
+              AdaptiveAlertDialogFactory.showContentUnavailable(context),
           padding: EdgeInsets.all(AppDimensions.padding.smallValue),
           child: Text(
             AppLoc.of(context).logInPageSignUpButton,

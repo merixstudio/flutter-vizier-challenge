@@ -5,14 +5,13 @@ class _CreditCardContainer extends StatelessWidget {
 
   const _CreditCardContainer({
     required this.child,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.75,
-      child: Container(
+      child: DecoratedBox(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(12.0)),
           color: AppColors.primary100,

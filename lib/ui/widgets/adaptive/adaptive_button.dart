@@ -18,12 +18,13 @@ class AdaptiveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AdaptiveWidgetType _adaptiveWidgetType = AdaptiveWidgetUtil.getWidgetTypeOf(
+    final AdaptiveWidgetType adaptiveWidgetType =
+        AdaptiveWidgetUtil.getWidgetTypeOf(
       context,
       platform: Platform.adaptive,
     );
 
-    switch (_adaptiveWidgetType) {
+    switch (adaptiveWidgetType) {
       case AdaptiveWidgetType.cupertino:
         return _buildBoxDecoration(
           child: _buildCupertinoButton(),
@@ -65,7 +66,8 @@ class AdaptiveButton extends StatelessWidget {
 
   Widget _buildMaterialButton() {
     final BorderRadiusGeometry? borderRadiusGeometry = decoration?.borderRadius;
-    final BorderRadius? borderRadius = borderRadiusGeometry is BorderRadius ? borderRadiusGeometry : null;
+    final BorderRadius? borderRadius =
+        borderRadiusGeometry is BorderRadius ? borderRadiusGeometry : null;
 
     return Material(
       borderRadius: borderRadius,

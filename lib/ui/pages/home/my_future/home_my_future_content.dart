@@ -22,7 +22,7 @@ part 'widgets/home_my_future_assets_header.dart';
 part 'widgets/home_my_future_retirement_chart.dart';
 
 class HomeMyFutureContent extends StatefulWidget {
-  const HomeMyFutureContent({Key? key}) : super(key: key);
+  const HomeMyFutureContent({super.key});
 
   @override
   State<HomeMyFutureContent> createState() => _HomeMyFutureContentState();
@@ -59,7 +59,8 @@ class _HomeMyFutureContentState extends State<HomeMyFutureContent> {
           ),
           Expanded(
             child: _buildRetirementPlanChart(
-              retirementPlan: context.watch<RetirementPlanCubit>().state.retirementPlan,
+              retirementPlan:
+                  context.watch<RetirementPlanCubit>().state.retirementPlan,
             ),
           ),
           SizedBox(

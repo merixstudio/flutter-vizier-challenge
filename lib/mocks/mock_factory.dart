@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:collection/collection.dart';
 import 'package:injectable/injectable.dart';
 import 'package:vizier/config/injector/di.dart';
 import 'package:vizier/config/styles/images/app_images.dart';

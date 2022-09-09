@@ -16,8 +16,9 @@ class DataAuthenticationRepository extends AuthenticationRepository {
     AuthenticationRequest request,
   ) async {
     try {
-      final ResponseStatus<AuthenticationResponse> _response = await authenticationDataSource.getLogin(request);
-      return ResponseStatus<AuthenticationResponse>.success(_response.data!);
+      final ResponseStatus<AuthenticationResponse> response =
+          await authenticationDataSource.getLogin(request);
+      return ResponseStatus<AuthenticationResponse>.success(response.data!);
     } catch (error) {
       return ResponseStatus<AuthenticationResponse>.error(error);
     }

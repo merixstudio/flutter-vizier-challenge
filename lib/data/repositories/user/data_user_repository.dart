@@ -16,8 +16,8 @@ class DataUserRepository extends UserRepository {
   @override
   Future<ResponseStatus<UserModel>> me() async {
     try {
-      final ResponseStatus<UserModel> _response = await userDataSource.me();
-      return ResponseStatus<UserModel>.success(_response.data!);
+      final ResponseStatus<UserModel> response = await userDataSource.me();
+      return ResponseStatus<UserModel>.success(response.data!);
     } catch (error) {
       return ResponseStatus<UserModel>.error(error);
     }
@@ -26,8 +26,9 @@ class DataUserRepository extends UserRepository {
   @override
   Future<ResponseStatus<UserNotificationsResponse>> notifications() async {
     try {
-      final ResponseStatus<UserNotificationsResponse> _response = await userDataSource.notifications();
-      return ResponseStatus<UserNotificationsResponse>.success(_response.data!);
+      final ResponseStatus<UserNotificationsResponse> response =
+          await userDataSource.notifications();
+      return ResponseStatus<UserNotificationsResponse>.success(response.data!);
     } catch (error) {
       return ResponseStatus<UserNotificationsResponse>.error(error);
     }

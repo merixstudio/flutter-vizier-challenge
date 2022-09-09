@@ -16,11 +16,12 @@ class AdaptiveAlertDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AdaptiveWidgetType _adaptiveWidgetType = AdaptiveWidgetUtil.getWidgetTypeOf(
+    final AdaptiveWidgetType adaptiveWidgetType =
+        AdaptiveWidgetUtil.getWidgetTypeOf(
       context,
       platform: Platform.adaptive,
     );
-    switch (_adaptiveWidgetType) {
+    switch (adaptiveWidgetType) {
       case AdaptiveWidgetType.cupertino:
         return _buildCupertinoAlertDialog(
           context,

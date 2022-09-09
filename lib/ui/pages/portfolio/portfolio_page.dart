@@ -28,7 +28,7 @@ part 'widgets/portfolio_my_watchlist_section.dart';
 class PortfolioPage extends StatelessWidget with AutoRouteWrapper {
   static const String route = 'portfolio-page';
 
-  const PortfolioPage({Key? key}) : super(key: key);
+  const PortfolioPage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -38,7 +38,8 @@ class PortfolioPage extends StatelessWidget with AutoRouteWrapper {
           create: (context) => DI.resolve<MyPortfolioCubit>()..fetchData(),
         ),
         BlocProvider(
-          create: (context) => DI.resolve<PortfolioWatchlistCubit>()..fetchData(),
+          create: (context) =>
+              DI.resolve<PortfolioWatchlistCubit>()..fetchData(),
         ),
       ],
       child: this,
@@ -71,16 +72,19 @@ class PortfolioPage extends StatelessWidget with AutoRouteWrapper {
         ),
         _buildPortfolioOverviewLoadedBody(
           context,
-          portfolioOverview: context.watch<MyPortfolioCubit>().state.portfolioOverview,
+          portfolioOverview:
+              context.watch<MyPortfolioCubit>().state.portfolioOverview,
         ),
         _PortfolioMyWatchlistSection(
-          companyAssets: context.watch<PortfolioWatchlistCubit>().state.companyAssets,
+          companyAssets:
+              context.watch<PortfolioWatchlistCubit>().state.companyAssets,
           onCompanyPressed: (company) => context.pushRoute(
             CompanyListingPageRoute(
               companyAsset: company,
             ),
           ),
-          onMorePressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+          onMorePressed: () =>
+              AdaptiveAlertDialogFactory.showContentUnavailable(context),
         )
       ],
     );

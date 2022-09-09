@@ -36,8 +36,8 @@ class FinancialBreakdownPage extends StatelessWidget with AutoRouteWrapper {
 
   const FinancialBreakdownPage({
     required this.arguments,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -56,10 +56,11 @@ class FinancialBreakdownPage extends StatelessWidget with AutoRouteWrapper {
       ],
       child: BlocListener<ChartTabsCubit, ChartTabsState>(
         listener: (context, state) => state.mapOrNull(
-          tab: (state) => context.read<AccountFinancialBreakdownCubit>().fetchData(
-                daysBack: state.selectedTab.days(),
-                accountModel: arguments.account,
-              ),
+          tab: (state) =>
+              context.read<AccountFinancialBreakdownCubit>().fetchData(
+                    daysBack: state.selectedTab.days(),
+                    accountModel: arguments.account,
+                  ),
         ),
         child: this,
       ),
@@ -135,7 +136,8 @@ class FinancialBreakdownPage extends StatelessWidget with AutoRouteWrapper {
             ),
             sections: sections,
             selectedTab: context.watch<ChartTabsCubit>().state.selectedTab,
-            onTabSelected: (tab) => context.read<ChartTabsCubit>().changeTab(tab),
+            onTabSelected: (tab) =>
+                context.read<ChartTabsCubit>().changeTab(tab),
           ),
         ),
         SizedBox(

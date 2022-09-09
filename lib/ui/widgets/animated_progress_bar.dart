@@ -12,14 +12,15 @@ class AnimatedProgressBar extends StatefulWidget {
     required this.currentProgress,
     this.duration,
     this.summary,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<AnimatedProgressBar> createState() => _AnimatedProgressBarState();
 }
 
-class _AnimatedProgressBarState extends State<AnimatedProgressBar> with TickerProviderStateMixin {
+class _AnimatedProgressBarState extends State<AnimatedProgressBar>
+    with TickerProviderStateMixin {
   late final AnimationController animationController = AnimationController(
     duration: widget.duration ?? AppConstants.animation.defaultDuration,
     vsync: this,

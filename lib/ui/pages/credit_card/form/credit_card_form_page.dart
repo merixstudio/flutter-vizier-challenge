@@ -27,9 +27,7 @@ part 'credit_card_form.dart';
 class CreditCardFormPage extends StatefulWidget implements AutoRouteWrapper {
   static const String route = 'card-form-page';
 
-  const CreditCardFormPage({
-    Key? key,
-  }) : super(key: key);
+  const CreditCardFormPage();
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -139,7 +137,9 @@ class _CreditCardFormPageState extends State<CreditCardFormPage> {
           _autovalidateMode = AutovalidateMode.always;
         });
         if (_formKey.currentState?.validate() ?? false) {
-          context.read<CardAddCubit>().add(context.read<CardFormCubit>().state.account);
+          context
+              .read<CardAddCubit>()
+              .add(context.read<CardFormCubit>().state.account);
         }
       },
       padding: EdgeInsets.all(AppDimensions.padding.defaultValue),

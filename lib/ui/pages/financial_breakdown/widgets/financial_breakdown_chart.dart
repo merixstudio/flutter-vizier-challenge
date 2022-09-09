@@ -13,8 +13,7 @@ class _FinancialBreakdownChart extends StatelessWidget {
     required this.sections,
     required this.selectedTab,
     required this.onTabSelected,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,9 @@ class _FinancialBreakdownChart extends StatelessWidget {
               children: [
                 Chart(
                   duration: AppConstants.animation.pieChartSweep,
-                  layers: ChartFactory.fromStockDataMultiPieItemList(sections ?? []),
+                  layers: ChartFactory.fromStockDataMultiPieItemList(
+                    sections ?? [],
+                  ),
                 ),
                 Center(
                   child: _buildCenterPie(),

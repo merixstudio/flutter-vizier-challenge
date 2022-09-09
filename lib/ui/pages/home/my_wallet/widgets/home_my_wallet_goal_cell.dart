@@ -13,8 +13,7 @@ class _HomeMyWalletGoalCell extends StatelessWidget {
     required this.change,
     required this.reached,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,8 @@ class _HomeMyWalletGoalCell extends StatelessWidget {
           ),
           AnimatedProgressBar(
             currentProgress: reached,
-            summary: AppLoc.of(context).homeMyWalletSummaryGoalCellProgressDescription(
+            summary: AppLoc.of(context)
+                .homeMyWalletSummaryGoalCellProgressDescription(
               PercentageFormatterUtil.instance.format(
                 value: reached.toDouble(),
                 decimalDigits: 0,

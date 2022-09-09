@@ -11,8 +11,8 @@ class BottomActionsSheet extends StatelessWidget {
 
   const BottomActionsSheet({
     required this.actions,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

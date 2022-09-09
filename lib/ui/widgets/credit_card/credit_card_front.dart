@@ -11,8 +11,7 @@ class _CreditCardFront extends StatelessWidget {
     required this.expiry,
     required this.logo,
     required this.number,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,10 @@ class _CreditCardFront extends StatelessWidget {
           Transform.scale(
             scale: 1.3,
             child: Transform.translate(
-              offset: Offset(AppDimensions.padding.biggerValue, AppDimensions.padding.biggerValue),
+              offset: Offset(
+                AppDimensions.padding.biggerValue,
+                AppDimensions.padding.biggerValue,
+              ),
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: SvgPicture.asset(

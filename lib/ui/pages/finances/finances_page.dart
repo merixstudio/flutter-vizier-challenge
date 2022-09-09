@@ -23,7 +23,7 @@ part 'widgets/finances_status_summary.dart';
 class FinancesPage extends StatelessWidget with AutoRouteWrapper {
   static const String route = 'finances-page';
 
-  const FinancesPage({Key? key}) : super(key: key);
+  const FinancesPage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

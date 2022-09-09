@@ -13,8 +13,8 @@ class MainAppPage extends StatefulWidget {
     required this.appRouter,
     required this.isFirstTimeOpened,
     required this.isSessionActive,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _MainAppPageState createState() => _MainAppPageState();

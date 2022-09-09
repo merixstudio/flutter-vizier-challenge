@@ -13,8 +13,7 @@ class _OfferDetailsSlider extends StatelessWidget {
     required this.label,
     required this.onChanged,
     required this.value,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +64,8 @@ class _OfferDetailsSlider extends StatelessWidget {
 
 class _CustomThumbShape extends SliderComponentShape {
   @override
-  Size getPreferredSize(bool isEnabled, bool isDiscrete) => const Size.fromRadius(14.0);
+  Size getPreferredSize(bool isEnabled, bool isDiscrete) =>
+      const Size.fromRadius(14.0);
 
   @override
   void paint(
@@ -115,7 +115,8 @@ class _CustomTrackShape extends RoundedRectSliderTrackShape {
   }) {
     final double trackHeight = sliderTheme.trackHeight ?? 0.0;
     final double trackLeft = offset.dx;
-    final double trackTop = offset.dy + (parentBox.size.height - trackHeight).half;
+    final double trackTop =
+        offset.dy + (parentBox.size.height - trackHeight).half;
     final double trackWidth = parentBox.size.width;
     return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
   }

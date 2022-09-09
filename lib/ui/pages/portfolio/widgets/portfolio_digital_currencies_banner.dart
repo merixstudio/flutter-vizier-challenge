@@ -7,8 +7,7 @@ class _PortfolioDigitalCurrenciesBanner extends StatelessWidget {
   const _PortfolioDigitalCurrenciesBanner({
     required this.balance,
     required this.change,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

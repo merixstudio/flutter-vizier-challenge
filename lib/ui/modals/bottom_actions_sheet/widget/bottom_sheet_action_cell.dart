@@ -7,8 +7,8 @@ class BottomSheetActionCell extends StatelessWidget {
   const BottomSheetActionCell({
     required this.title,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

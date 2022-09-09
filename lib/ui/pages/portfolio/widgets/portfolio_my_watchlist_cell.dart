@@ -16,8 +16,8 @@ class PortfolioMyWatchlistCell extends StatelessWidget {
   const PortfolioMyWatchlistCell({
     required this.companyAsset,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

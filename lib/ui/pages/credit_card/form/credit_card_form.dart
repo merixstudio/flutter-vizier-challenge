@@ -9,8 +9,7 @@ class _CreditCardForm extends StatelessWidget {
     required this.onUpdateExpiryCard,
     required this.onUpdateNameCard,
     required this.onUpdateNumberCard,
-    Key? key,
-  }) : super(key: key);
+  });
 
   final AutovalidateMode autovalidateMode;
   final GlobalKey<FormState> formKey;
@@ -148,7 +147,8 @@ class _CreditCardForm extends StatelessWidget {
         horizontal: AppDimensions.padding.bigValue,
         vertical: AppDimensions.padding.defaultValue - 2.0,
       ),
-      onPressed: () => AdaptiveAlertDialogFactory.showContentUnavailable(context),
+      onPressed: () =>
+          AdaptiveAlertDialogFactory.showContentUnavailable(context),
       child: Text(
         AppLoc.of(context).creditCardFormInputLabelScan,
         style: AppTextStyles.button.secondary(),

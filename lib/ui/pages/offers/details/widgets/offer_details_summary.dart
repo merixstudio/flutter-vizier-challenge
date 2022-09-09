@@ -7,13 +7,12 @@ class _OfferDetailsSummary extends StatelessWidget {
   const _OfferDetailsSummary({
     required this.left,
     required this.right,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
-      child: Container(
+      child: DecoratedBox(
         decoration: AppDecorations.defaultBorder(),
         child: Row(
           children: [

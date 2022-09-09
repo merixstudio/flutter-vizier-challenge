@@ -11,8 +11,7 @@ class _HomeMyFutureRetirementChart extends StatelessWidget {
     required this.timeInterval,
     required this.selectedTab,
     required this.onTabSelected,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

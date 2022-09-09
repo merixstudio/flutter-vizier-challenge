@@ -20,8 +20,8 @@ class OffersPage extends StatelessWidget implements AutoRouteWrapper {
   static const String route = 'offers-page';
 
   const OffersPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget wrappedRoute(BuildContext context) {

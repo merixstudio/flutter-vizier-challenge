@@ -11,8 +11,7 @@ class _OfferCell extends StatelessWidget {
     required this.content,
     required this.assetImage,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,10 @@ class _OfferCell extends StatelessWidget {
       decoration: AppDecorations.primaryBox(),
       padding: EdgeInsets.zero,
       onPressed: onPressed,
-      child: SizedBox(
-        height: 98.0,
-        child: Stack(
-          children: [
-            Align(
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: Align(
               alignment: Alignment.bottomRight,
               child: Hero(
                 tag: assetImage,
@@ -33,9 +31,9 @@ class _OfferCell extends StatelessWidget {
                 ),
               ),
             ),
-            _buildBody(),
-          ],
-        ),
+          ),
+          _buildBody(),
+        ],
       ),
     );
   }

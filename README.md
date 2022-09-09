@@ -42,8 +42,8 @@ Before starting, run in main project folder:
 
 To generate all the necessary files
 ## Environment versions
-- Dart 2.16+
-- Flutter 2.10.3
+- Dart 2.18+
+- Flutter 3.3.1
 
 ## Links
 - [Merixstudio Mobile](https://www.merixstudio.com/services/mobile-app-development/)

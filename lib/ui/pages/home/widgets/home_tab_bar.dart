@@ -14,8 +14,8 @@ class HomeTabBar extends StatelessWidget {
     required this.onSelectedTabItemChanged,
     required this.selectedItem,
     required this.tabController,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,9 @@ class HomeTabBar extends StatelessWidget {
     final bool isSelected = item == selectedItem;
     return AdaptiveButton(
       decoration: BoxDecoration(
-        color: isSelected ? AppColors.primary100.withOpacity(0.16) : AppColors.white,
+        color: isSelected
+            ? AppColors.primary100.withOpacity(0.16)
+            : AppColors.white,
         borderRadius: AppDimensions.radius.defaultRadius(),
       ),
       onPressed: () {

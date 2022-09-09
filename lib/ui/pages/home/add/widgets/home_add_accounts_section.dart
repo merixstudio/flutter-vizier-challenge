@@ -5,8 +5,7 @@ class _HomeAddAccountsSection extends StatelessWidget {
 
   const _HomeAddAccountsSection({
     required this.onMorePressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class _HomeAddAccountsSection extends StatelessWidget {
           title: AppLoc.of(context).homeAddAccountsSectionTitle,
           onMorePressed: onMorePressed,
         ),
-        Container(
+        DecoratedBox(
           decoration: AppDecorations.defaultBorder(),
           child: _buildActions(context),
         ),

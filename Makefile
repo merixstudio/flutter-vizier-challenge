@@ -1,9 +1,9 @@
 .DEFAULT_GOAL := help
 
-fvm_rebuild_models: ## Rebuilds all auto generated Dart files
+fvm_run_build_runner: ## Rebuilds all auto generated Dart files
 	fvm flutter pub run build_runner build --delete-conflicting-outputs
 
-rebuild_models: ## Rebuilds all auto generated Dart files
+run_build_runner: ## Rebuilds all auto generated Dart files
 	flutter pub run build_runner build --delete-conflicting-outputs
 
 help:

@@ -18,7 +18,7 @@ import 'package:vizier/ui/widgets/adaptive/adaptive_button.dart';
 class OnboardingPage extends StatefulWidget {
   static const String route = 'onboarding';
 
-  const OnboardingPage({Key? key}) : super(key: key);
+  const OnboardingPage({super.key});
 
   @override
   State<StatefulWidget> createState() => _OnboardingPageState();
@@ -53,7 +53,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
             actions: [
               AnimatedSwitcher(
                 duration: AppConstants.animation.defaultDuration,
-                child: state.isLastPage ? const SizedBox.shrink() : _buildSkipButton(),
+                child: state.isLastPage
+                    ? const SizedBox.shrink()
+                    : _buildSkipButton(),
               ),
             ],
           ),
@@ -70,7 +72,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   Widget _buildSkipButton() {
     return AdaptiveButton(
-      onPressed: () => context.router.replaceNamed(AuthenticationLoginPage.route),
+      onPressed: () =>
+          context.router.replaceNamed(AuthenticationLoginPage.route),
       child: Text(
         AppLoc.of(context).oboardingSkipButton,
         style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -169,7 +172,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
   Widget _buildBeginButton() {
     return AdaptiveButton(
       decoration: AppDecorations.button.primary(),
-      onPressed: () => context.router.replaceNamed(AuthenticationLoginPage.route),
+      onPressed: () =>
+          context.router.replaceNamed(AuthenticationLoginPage.route),
       child: Text(
         AppLoc.of(context).oboardingBeginButton,
         style: AppTextStyles.button.primary(),

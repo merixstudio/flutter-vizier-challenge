@@ -9,8 +9,7 @@ class _HomeAddActionCell extends StatelessWidget {
     required this.title,
     required this.icon,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

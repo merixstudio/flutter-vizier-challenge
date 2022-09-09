@@ -5,8 +5,7 @@ class _FinancialBreakdownTransactionsSummary extends StatelessWidget {
 
   const _FinancialBreakdownTransactionsSummary({
     required this.transactionCategories,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

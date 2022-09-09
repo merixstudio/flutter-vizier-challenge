@@ -25,8 +25,8 @@ class ChartContainer extends StatelessWidget {
     this.content,
     this.isLoading = false,
     this.onMorePressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

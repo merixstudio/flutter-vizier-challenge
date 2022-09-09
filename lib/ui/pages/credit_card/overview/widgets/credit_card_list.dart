@@ -11,8 +11,7 @@ class _CreditCardList extends StatelessWidget {
     required this.controller,
     required this.currentIndex,
     required this.onCardChanged,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

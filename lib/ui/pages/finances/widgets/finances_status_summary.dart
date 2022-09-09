@@ -7,8 +7,7 @@ class _FinancesStatusSummary extends StatelessWidget {
   const _FinancesStatusSummary({
     required this.spent,
     required this.since,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
