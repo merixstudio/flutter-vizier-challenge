@@ -1,27 +1,23 @@
 # Vizier
-Prototype of a financial mobile application.
+A prototype of a fintech mobile app for managing your finances.
 
 ![Vizier](https://cdn.dribbble.com/users/2041249/screenshots/16827492/media/986a5e3073542c34840e3cf8350961ab.jpg?compress=1&resize=1200x900&vertical=top)
 ## About
-The main goal was to create an application with a custom UI without using external libraries.
+At Merixstudio, we believe that learning from practice is the most effective. To keep honing our mobile skills, we challenged ourselves to build an application with a custom UI without using external libraries. That’s how Vizier was born.
 
-We created all charts, animations, and custom widgets ourselves, using components provided by Flutter or even layers of canvas.
+We created all charts, animations, and custom widgets ourselves, using components provided by Flutter or even layers of canvas. The application uses randomly generated data, but its architecture allows you to easily connect to an external provider (e.g. REST API) without changing views or cubits.
 
-
-The application uses randomly generated data, but thanks to the architecture in which it was written, it allows you to easily connect an external provider(e.g. REST API) without changing views or cubits.
-
-By making the project public, we can also show you how we work at Merixstudio, the application uses the standards developed by our developers.
+We approached Vizier like we would any other commercial project, so it shows the standards our mobile team follows. Now that it’s public, you can see for yourself the quality of work we deliver at Merixstudio.
 
 ## Charts
-Due to the great interest in the graphs component, we decided to create a separate, public library.
-Vizier uses it, but the entire implementation is in the library.
+Due to the great interest in the graphs component, we created a separate public library. Vizier uses parts of it, but the entire implementation is in the library. 
 [Check it here!](https://pub.dev/packages/mrx_charts)
 
 ## Features
 - Smooth, beautiful animations
 - Unique, made from scratch charts
 - No external libraries for UI
-- Bloc architecture with advantages of SOLID and clean architecture
+- BLoC architecture following SOLID and clean architecture principles
 - Randomly generated data
 - Adaptive widgets to support iOS and Android platform differences
 na
